@@ -5,7 +5,7 @@ on:
     branches:
       - main
   # eslint-disable-next-line yml/no-empty-mapping-value
-  pull_request:
+  pull_request_target:
 
 jobs:
   deploy:
