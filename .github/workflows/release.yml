@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
@@ -35,8 +35,8 @@ jobs:
         with:
           publish: pnpm release
           version: pnpm run version
-          commit: 'chore: release lib-boilerplate'
-          title: 'chore: release lib-boilerplate'
+          commit: 'chore: release domiso'
+          title: 'chore: release domiso'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

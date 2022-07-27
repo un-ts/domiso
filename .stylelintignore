@@ -4,5 +4,6 @@ lib
 LICENSE
 *.json
 *.log
+*.patch
 *.yaml
 *.yml

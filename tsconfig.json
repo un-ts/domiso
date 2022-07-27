@@ -1,6 +1,8 @@
 {
   "extends": "@1stg/tsconfig/node16",
   "compilerOptions": {
-    "rootDir": "."
+    "paths": {
+      "domiso": ["./src/index.ts"]
+    }
   }
 }

@@ -1,7 +1,16 @@
 {
   "root": true,
   "extends": "@1stg",
+  "rules": {
+    "unicorn/template-indent": "off"
+  },
   "overrides": [
+    {
+      "files": ".github/*.yml",
+      "rules": {
+        "unicorn/filename-case": "off"
+      }
+    },
     {
       "files": "docs/**/*.tsx",
       "rules": {
