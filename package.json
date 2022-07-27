@@ -51,7 +51,7 @@
     "build": "run-p build:*",
     "build:r": "r -f cjs",
     "build:tsc": "tsc -p src",
-    "codesandbox:install": "npx pnpm@7.5.1 i",
+    "codesandbox:install": "npx pnpm@7.6.0 i",
     "dev": "vitest",
     "docs:build": "w -e docs -p --publicPath /",
     "docs:dev": "w -e docs",
