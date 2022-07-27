@@ -1,0 +1,8 @@
+coverage
+dist
+lib
+LICENSE
+*.json
+*.log
+*.yaml
+*.yml
