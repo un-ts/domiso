@@ -2,7 +2,7 @@
   "name": "domiso",
   "version": "0.0.0",
   "type": "module",
-  "description": "Dom sanitizer based on browser native DOMParser",
+  "description": "The smallest and fastest Dom sanitizer based on browser native DOMParser",
   "repository": "git+https://github.com/un-ts/domiso.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "donate": {
