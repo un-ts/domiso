@@ -8,8 +8,8 @@ const sanitizeAttributes = (el: Element) => {
   for (let i = 0, len = attrs.length; i < len; i++) {
     const attr = attrs[i]
     if (
-      attr.name.toLowerCase().startsWith('on') ||
-      attr.value.toLowerCase().startsWith('javascript:')
+      /^on/i.test(attr.name) ||
+      /^(?:data|javascript|vbscript):/i.test(attr.value)
     ) {
       el.removeAttributeNode(attr)
       // eslint-disable-next-line sonar/updated-loop-counter -- the attribute is removed, the index and length must be rechecked
@@ -39,9 +39,7 @@ function sanitizeNode(el: Document | Element) {
     return sanitizeChildren(el)
   }
 
-  const tagName = el.tagName.toLowerCase()
-
-  if (['parsererror', 'script'].includes(tagName)) {
+  if (['parsererror', 'script'].includes(el.tagName.toLowerCase())) {
     el.remove()
     return null
   }
