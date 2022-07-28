@@ -1,11 +1,19 @@
 let domParser: DOMParser | undefined
 
-const sanitizeEl = (el: Element | null) => {
+export type Arrayable<T> = T | T[]
+
+const sanitizeEl = (el: Element | null): Arrayable<Element | null | void> => {
   if (!el) {
     return el
   }
 
-  if (el.tagName.toLowerCase() === 'script') {
+  const tagName = el.tagName.toLowerCase()
+
+  if (['html', 'head', 'body'].includes(tagName)) {
+    return [...el.children].flatMap(sanitizeEl)
+  }
+
+  if (['parsererror', 'script'].includes(tagName)) {
     return el.remove()
   }
 
@@ -16,7 +24,7 @@ const sanitizeEl = (el: Element | null) => {
   }
 
   for (let i = 0, len = el.children.length; i < len; i++) {
-    const sanitized = sanitizeEl(el.children.item(i))
+    const sanitized = sanitizeEl(el.children[i])
     if (sanitized == null) {
       // eslint-disable-next-line sonar/updated-loop-counter -- the child is removed, the index and length must be rechecked
       i--
@@ -37,7 +45,10 @@ export const sanitize = (
 
   const doc = domParser.parseFromString(domString, type)
   const els = doc.children
-  return [...els].map(el => sanitizeEl(el)?.outerHTML ?? '').join('')
+  return [...els]
+    .flatMap(el => sanitizeEl(el))
+    .map(el => el?.outerHTML)
+    .join('')
 }
 
 export const sanitizeSvg = (svg: string) => sanitize(svg, 'image/svg+xml')
