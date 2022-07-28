@@ -12,7 +12,7 @@ export default defineConfig({
   ],
   test: {
     coverage: {
-      reporter: ['lcov', 'json'],
+      reporter: ['lcov', 'json', 'text'],
     },
     environment: 'jsdom',
   },
