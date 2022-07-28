@@ -43,10 +43,11 @@ npm i domiso
 ### API
 
 ```js
-import { IMAGE_SVG_XML, sanitize } from 'domiso'
+import { IMAGE_SVG_XML, sanitize, sanitizeSvg } from 'domiso'
 
 sanitize(`<!-- HTML content -->`)
 sanitize(`<svg>SVG content</svg>`, IMAGE_SVG_XML)
+sanitizeSvg(`<svg>SVG content</svg>`)
 ```
 
 ## Sponsors
