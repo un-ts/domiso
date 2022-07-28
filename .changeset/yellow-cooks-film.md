@@ -2,4 +2,4 @@
 "domiso": patch
 ---
 
-feat: better HTML/XML support, remove `javascript:` attributes
+feat: better HTML/XML support, remove `data:`, `javascript:` and `vbscript:` attributes
