@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.0.3
+
+### Patch Changes
+
+- [#8](https://github.com/un-ts/domiso/pull/8) [`1effc29`](https://github.com/un-ts/domiso/commit/1effc290a5ce7081039d98729366c9864133b500) Thanks [@JounQin](https://github.com/JounQin)! - chore: add keywords, upper case DOM in README
+
 ## 0.0.2
 
 ### Patch Changes
