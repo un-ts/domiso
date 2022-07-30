@@ -13,7 +13,7 @@
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![changesets](https://img.shields.io/badge/maintained%20with-changesets-176de3.svg)](https://github.com/atlassian/changesets)
 
-The smallest and fastest Dom sanitizer based on browser native DOMParser
+The smallest and fastest DOM sanitizer based on browser native DOMParser
 
 ## TOC <!-- omit in toc -->
 
