@@ -1,0 +1,4 @@
+<svg onload="alert('xss listener')">
+  <text>Hello World!</text>
+  <script>alert('xss script')</script>
+</svg>

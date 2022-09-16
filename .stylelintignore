@@ -5,5 +5,7 @@ LICENSE
 *.json
 *.log
 *.patch
+*.snap
+*.svg
 *.yaml
 *.yml
