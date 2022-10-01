@@ -12,7 +12,7 @@ specifiers:
   '@types/node': ^18.7.18
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
-  '@types/web': ^0.0.72
+  '@types/web': ^0.0.75
   '@vitest/coverage-istanbul': ^0.23.2
   domiso: link:.
   github-markdown-css: ^5.1.0
@@ -39,7 +39,7 @@ devDependencies:
   '@types/node': 18.7.18
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
-  '@types/web': 0.0.72
+  '@types/web': 0.0.75
   '@vitest/coverage-istanbul': 0.23.2_7n5ywrz2nzgzuulc4kbcqjlb5e
   domiso: 'link:'
   github-markdown-css: 5.1.0
@@ -3928,8 +3928,8 @@ packages:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
 
-  /@types/web/0.0.72:
-    resolution: {integrity: sha512-8ELWTmT6gpjH+mFCN6jja/pmXBZTOjSvfnBcxwP7xKC9tkqLNVxtQX/o2W0c1VcUR2ZFPoPSNH7YtdZQfHOvmg==}
+  /@types/web/0.0.75:
+    resolution: {integrity: sha512-42MBIWop5E6TENKBwwMONJfctJsHc5o1k6Fn3FOXsPz892cW6wuiWGPvQh+Tle+yaAMaIpRsdOnlFMDKUKkdGw==}
     dev: true
 
   /@types/ws/8.5.3:
