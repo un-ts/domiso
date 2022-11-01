@@ -8,7 +8,7 @@ specifiers:
   '@pkgr/webpack': ^3.4.0
   '@pkgr/webpack-mdx': ^2.2.0
   '@size-limit/preset-small-lib': ^8.1.0
-  '@types/mdx': ^2.0.2
+  '@types/mdx': ^2.0.3
   '@types/node': ^18.7.18
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
@@ -35,7 +35,7 @@ devDependencies:
   '@pkgr/webpack': 3.4.0_z2uevpujfone7aezffo5zxww4m
   '@pkgr/webpack-mdx': 2.2.0_5ic4iva3zxjqzlsp72r3xprb3i
   '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
-  '@types/mdx': 2.0.2
+  '@types/mdx': 2.0.3
   '@types/node': 18.7.18
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
@@ -2940,7 +2940,7 @@ packages:
     resolution: {integrity: sha512-ASN1GUH0gXsgJ2UD/Td7FzJo1SwFkkQ5V1i9at5o/ROra7brkyMcBsotsOWJWRzmXZaLw2uXWn4aN8B3PMNFMA==}
     dependencies:
       '@types/estree-jsx': 0.0.1
-      '@types/mdx': 2.0.2
+      '@types/mdx': 2.0.3
       astring: 1.8.3
       estree-util-build-jsx: 2.2.0
       estree-util-is-identifier-name: 2.0.1
@@ -3811,8 +3811,8 @@ packages:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
     dev: true
 
-  /@types/mdx/2.0.2:
-    resolution: {integrity: sha512-mJGfgj4aWpiKb8C0nnJJchs1sHBHn0HugkVfqqyQi7Wn6mBRksLeQsPOFvih/Pu8L1vlDzfe/LidhVHBeUk3aQ==}
+  /@types/mdx/2.0.3:
+    resolution: {integrity: sha512-IgHxcT3RC8LzFLhKwP3gbMPeaK7BM9eBH46OdapPA7yvuIUJ8H6zHZV53J8hGZcTSnt95jANt+rTBNUUc22ACQ==}
     dev: true
 
   /@types/mime/3.0.0:
