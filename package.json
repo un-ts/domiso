@@ -63,7 +63,7 @@
     "@types/mdx": "^2.0.3",
     "@types/node": "^18.7.18",
     "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.6",
+    "@types/react-dom": "^18.0.9",
     "@types/web": "^0.0.75",
     "@vitest/coverage-istanbul": "^0.23.2",
     "domiso": "link:.",
