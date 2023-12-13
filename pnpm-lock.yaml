@@ -31,8 +31,8 @@ devDependencies:
     specifier: ^8.1.0
     version: 8.1.0(size-limit@8.1.0)
   '@types/mdx':
-    specifier: ^2.0.3
-    version: 2.0.3
+    specifier: ^2.0.10
+    version: 2.0.10
   '@types/node':
     specifier: ^18.7.18
     version: 18.7.18
@@ -701,7 +701,7 @@ packages:
       '@babel/helper-plugin-utils': 7.19.0
       debug: 4.3.4
       lodash.debounce: 4.0.8
-      resolve: 1.22.1
+      resolve: 1.22.8
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
@@ -2898,7 +2898,7 @@ packages:
       cosmiconfig: 7.0.1
       glob: 7.2.3
       jsonc: 2.0.0
-      minimatch: 5.1.0
+      minimatch: 5.1.6
       tslib: 2.4.0
     transitivePeerDependencies:
       - supports-color
@@ -3159,7 +3159,7 @@ packages:
     resolution: {integrity: sha512-ASN1GUH0gXsgJ2UD/Td7FzJo1SwFkkQ5V1i9at5o/ROra7brkyMcBsotsOWJWRzmXZaLw2uXWn4aN8B3PMNFMA==}
     dependencies:
       '@types/estree-jsx': 0.0.1
-      '@types/mdx': 2.0.3
+      '@types/mdx': 2.0.10
       astring: 1.8.3
       estree-util-build-jsx: 2.2.0
       estree-util-is-identifier-name: 2.0.1
@@ -3210,7 +3210,7 @@ packages:
       nopt: 5.0.0
       proc-log: 2.0.1
       read-package-json-fast: 2.0.3
-      semver: 7.3.7
+      semver: 7.5.4
       walk-up-path: 1.0.0
     dev: true
 
@@ -3220,7 +3220,7 @@ packages:
     dependencies:
       '@npmcli/name-from-folder': 1.0.1
       glob: 8.0.3
-      minimatch: 5.1.0
+      minimatch: 5.1.6
       read-package-json-fast: 2.0.3
     dev: true
 
@@ -3529,7 +3529,7 @@ packages:
       builtin-modules: 3.3.0
       deepmerge: 4.2.2
       is-module: 1.0.0
-      resolve: 1.22.1
+      resolve: 1.22.8
       rollup: 2.79.0
     dev: true
 
@@ -4055,8 +4055,8 @@ packages:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
     dev: true
 
-  /@types/mdx@2.0.3:
-    resolution: {integrity: sha512-IgHxcT3RC8LzFLhKwP3gbMPeaK7BM9eBH46OdapPA7yvuIUJ8H6zHZV53J8hGZcTSnt95jANt+rTBNUUc22ACQ==}
+  /@types/mdx@2.0.10:
+    resolution: {integrity: sha512-Rllzc5KHk0Al5/WANwgSPl1/CwjqCy+AZrGd78zuK+jO9aDM6ffblZ+zIjgPNAaEBmlO0RYDvLNh7wD0zKVgEg==}
     dev: true
 
   /@types/mime@3.0.0:
@@ -5408,7 +5408,7 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       bin-version: 3.1.0
-      semver: 5.7.1
+      semver: 5.7.2
       semver-truncate: 1.1.2
     dev: true
 
@@ -5567,7 +5567,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.3.7
+      semver: 7.5.4
     dev: true
 
   /bytes-iec@3.1.1:
@@ -8679,7 +8679,7 @@ packages:
   /filelist@1.0.4:
     resolution: {integrity: sha512-w1cEuf3S+DrLCQL7ET6kz+gmlJdbq9J7yXCSjK/OZCPA+qEN1WyF4ZAf0YYJa4/shHJra2t/d/r8SV4Ji+x+8Q==}
     dependencies:
-      minimatch: 5.1.0
+      minimatch: 5.1.6
     dev: true
 
   /filename-reserved-regex@2.0.0:
@@ -9084,7 +9084,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 5.1.0
+      minimatch: 5.1.6
       once: 1.4.0
     dev: true
 
@@ -10570,7 +10570,7 @@ packages:
       acorn: 8.8.0
       eslint-visitor-keys: 3.3.0
       espree: 9.4.0
-      semver: 7.3.7
+      semver: 7.5.4
     dev: true
 
   /jsonc-parser@3.1.0:
@@ -12232,8 +12232,8 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       hosted-git-info: 4.1.0
-      is-core-module: 2.10.0
-      semver: 7.3.7
+      is-core-module: 2.13.1
+      semver: 7.5.4
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -14084,7 +14084,7 @@ packages:
       jstransformer: 1.0.0
       pug-error: 2.0.0
       pug-walk: 2.0.0
-      resolve: 1.22.1
+      resolve: 1.22.8
     dev: true
 
   /pug-lexer@5.0.1:
@@ -15790,7 +15790,7 @@ packages:
     resolution: {integrity: sha512-V1fGg9i4CL3qesB6U0L6XAm4xOJiHmt4QAacazumuasc03BvtFGIMCduv01JWQ69Nv+JST9TqhSCiJoxoY031w==}
     engines: {node: '>=0.10.0'}
     dependencies:
-      semver: 5.7.1
+      semver: 5.7.2
     dev: true
 
   /semver@5.7.1:
@@ -15801,9 +15801,7 @@ packages:
   /semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
-    requiresBuild: true
     dev: true
-    optional: true
 
   /semver@6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
@@ -17922,7 +17920,7 @@ packages:
       espree: 9.4.0
       esquery: 1.4.0
       lodash: 4.17.21
-      semver: 7.3.7
+      semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
     dev: true
