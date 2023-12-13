@@ -67,7 +67,7 @@
     "@types/web": "^0.0.93",
     "@vitest/coverage-istanbul": "^0.23.2",
     "domiso": "link:",
-    "github-markdown-css": "^5.1.0",
+    "github-markdown-css": "^5.5.0",
     "jsdom": "^20.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
