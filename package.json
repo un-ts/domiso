@@ -7,7 +7,7 @@
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "funding": "https://opencollective.com/unts",
   "license": "MIT",
-  "packageManager": "pnpm@8.11.0",
+  "packageManager": "pnpm@8.12.0",
   "engines": {
     "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
@@ -50,31 +50,31 @@
     "version": "changeset version && pnpm i --no-frozen-lockfile"
   },
   "devDependencies": {
-    "@1stg/app-config": "^7.2.1",
-    "@1stg/lib-config": "^10.2.1",
-    "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.24.4",
+    "@1stg/app-config": "^9.0.1",
+    "@1stg/lib-config": "^12.0.1",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
     "@pkgr/webpack": "^3.4.0",
     "@pkgr/webpack-mdx": "^2.2.0",
-    "@size-limit/preset-small-lib": "^8.1.0",
-    "@types/mdx": "^2.0.3",
-    "@types/node": "^18.7.18",
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.9",
-    "@types/web": "^0.0.93",
-    "@vitest/coverage-istanbul": "^0.23.2",
+    "@size-limit/preset-small-lib": "^11.0.1",
+    "@types/mdx": "^2.0.10",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
+    "@types/web": "^0.0.127",
+    "@vitest/coverage-istanbul": "^1.0.4",
     "domiso": "link:",
-    "github-markdown-css": "^5.1.0",
-    "jsdom": "^20.0.0",
+    "github-markdown-css": "^5.5.0",
+    "jsdom": "^23.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.0",
+    "react-router-dom": "^6.20.1",
     "sirv-cli": "^2.0.2",
-    "size-limit": "^8.1.0",
-    "type-coverage": "^2.22.0",
-    "typescript": "^4.8.3",
-    "unplugin-auto-import": "^0.11.2",
-    "vitest": "^0.23.2"
+    "size-limit": "^11.0.1",
+    "type-coverage": "^2.27.0",
+    "typescript": "^5.3.3",
+    "unplugin-auto-import": "^0.17.2",
+    "vitest": "^1.0.4"
   },
   "publishConfig": {
     "main": "./lib/index.cjs",
@@ -88,7 +88,6 @@
   },
   "pnpm": {
     "overrides": {
-      "prettier": "^2.8.8",
       "sh-syntax": "^0.4.1"
     }
   },

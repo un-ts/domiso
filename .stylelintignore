@@ -7,5 +7,7 @@ LICENSE
 *.patch
 *.snap
 *.svg
+*.ts
+*.tsx
 *.yaml
 *.yml
