@@ -2,6 +2,7 @@ coverage
 dist
 lib
 CHANGELOG.md
+/DOMPurify
 /auto-imports.d.ts
 /pnpm-lock.yaml
 !/.github

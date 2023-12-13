@@ -17,6 +17,19 @@ describe('fixtures', () => {
     }
   })
 
+  test('fragment', async () => {
+    const fragmentFixtures = path.resolve(fixtures, 'fragment')
+    const files = await fs.readdir(fragmentFixtures)
+    for (const file of files) {
+      expect(
+        sanitize(
+          await fs.readFile(path.resolve(fragmentFixtures, file), 'utf8'),
+          true,
+        ),
+      ).toMatchSnapshot()
+    }
+  })
+
   test('svg', async () => {
     const svgFixtures = path.resolve(fixtures, 'svg')
     const files = await fs.readdir(svgFixtures)

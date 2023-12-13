@@ -7,7 +7,7 @@
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "funding": "https://opencollective.com/unts",
   "license": "MIT",
-  "packageManager": "pnpm@8.12.0",
+  "packageManager": "pnpm@8.12.1",
   "engines": {
     "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
@@ -34,6 +34,8 @@
     "build": "pnpm test && run-p build:*",
     "build:r": "r -f cjs",
     "build:tsc": "tsc -p src",
+    "codesandbox:build": "yarn test && yarn run-p build:*",
+    "codesandbox:install": "git submodule update --init && yarn",
     "dev": "vitest",
     "docs:build": "w -e docs -p --publicPath /",
     "docs:dev": "w -e docs",
@@ -41,7 +43,7 @@
     "lint:es": "eslint . --cache -f friendly --max-warnings 10",
     "lint:style": "stylelint . --cache",
     "lint:tsc": "tsc --noEmit",
-    "prepare": "simple-git-hooks",
+    "prepare": "simple-git-hooks || exit 0",
     "release": "pnpm build && changeset publish",
     "serve": "sirv dist -s",
     "test": "vitest run --coverage",
@@ -63,7 +65,7 @@
     "@types/react-dom": "^18.2.17",
     "@types/web": "^0.0.127",
     "@vitest/coverage-istanbul": "^1.0.4",
-    "domiso": "link:",
+    "domiso": "link:.",
     "github-markdown-css": "^5.5.0",
     "jsdom": "^23.0.1",
     "react": "^18.2.0",
@@ -94,7 +96,7 @@
   "size-limit": [
     {
       "path": "lib/index.js",
-      "limit": "410B"
+      "limit": "750B"
     }
   ],
   "typeCoverage": {

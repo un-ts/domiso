@@ -8,6 +8,9 @@ export default defineConfig({
     }),
   ],
   test: {
+    alias: {
+      DOMPurify: new URL('DOMPurify', import.meta.url).pathname,
+    },
     coverage: {
       include: ['src'],
       provider: 'istanbul',

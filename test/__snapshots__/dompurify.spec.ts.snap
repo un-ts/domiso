@@ -1,0 +1,1296 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`dompurify compatibility > 65 > 65 1`] = `
+{
+  "expected": "<div id="11"><svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="11"><svg xmlns="http://www.w3.org/2000/svg"><g onload="javascript:alert(11)"></g></svg>//["'\`-->]]>]</div>",
+  "result": "<div id="11"><svg xmlns="http://www.w3.org/2000/svg"></svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 71 > 71 1`] = `
+{
+  "expected": "<div id="17">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="17"><?xml-stylesheet href="javascript:alert(17)"?><root/>//["'\`-->]]>]</div>",
+  "result": "<div id="17"><!--?xml-stylesheet href="javascript:alert(17)"?-->//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 90 > 90 1`] = `
+{
+  "expected": "<div id="37"><img src="x">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="37"><!--<img src="--><img src=x onerror=alert(37)//">//["'\`-->]]>]</div>",
+  "result": "<div id="37"><!--<img src="--><img src="x">//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 91 > 91 1`] = `
+{
+  "expected": [
+    "<div id="38"><img src="</comment><img src=x onerror=alert(38)//">//["'\`--&gt;]]&gt;]</div><div id="39"></div>",
+    "<div id="38"><img src="&lt;/comment&gt;&lt;img src=x onerror=alert(38)//">//["'\`--&gt;]]&gt;]</div><div id="39"></div>",
+  ],
+  "payload": "<div id="38"><comment><img src="</comment><img src=x onerror=alert(38)//">//["'\`-->]]>]</div><div id="39"><!-- up to Opera 11.52, FF 3.6.28 -->",
+  "result": "<div id="38">//["'\`--&gt;]]&gt;]</div><div id="39"><!-- up to Opera 11.52, FF 3.6.28 --></div>",
+}
+`;
+
+exports[`dompurify compatibility > 94 > 94 1`] = `
+{
+  "expected": "<div id="40"><img src="x">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="40"><style><img src="</style><img src=x onerror=alert(40)//">//["'\`-->]]>]</div>",
+  "result": "<div id="40"><style><img src="</style><img src="x">//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 97 > 97 1`] = `
+{
+  "expected": "<div id="42"><a href="/. /,alert(42)//#">XXX</a>//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="42"><head><base href="javascript://"/></head><body><a href="/. /,alert(42)//#">XXX</a></body>//["'\`-->]]>]</div>",
+  "result": "<div id="42"><base><a href="/. /,alert(42)//#">XXX</a>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 98 > 98 1`] = `
+{
+  "expected": "<div id="43"></div>",
+  "payload": "<div id="43"><?xml version="1.0" standalone="no"?>",
+  "result": "<div id="43"><!--?xml version="1.0" standalone="no"?--></div>",
+}
+`;
+
+exports[`dompurify compatibility > 103 > 103 1`] = `
+{
+  "expected": "<div id="47"><svg xmlns="http://www.w3.org/2000/svg"></svg>//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="47"><svg xmlns="http://www.w3.org/2000/svg"><script>alert(47)</script></svg>//["'\`-->]]>]</div>",
+  "result": "<div id="47"><svg xmlns="http://www.w3.org/2000/svg">alert(47)</svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 105 > 105 1`] = `
+{
+  "expected": "<div id="49">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="49"><OBJECT CLASSID="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83"><PARAM NAME="DataURL" VALUE="javascript:alert(49)"></OBJECT>//["'\`-->]]>]</div>",
+  "result": "<div id="49"><object classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83"><param name="DataURL"></object>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 106 > 106 1`] = `
+{
+  "expected": "<div id="50">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="50"><object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></object>//["'\`-->]]>]</div>",
+  "result": "<div id="50"><object></object>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 107 > 107 1`] = `
+{
+  "expected": "<div id="51">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="51"><embed src="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></embed>//["'\`-->]]>]</div>",
+  "result": "<div id="51"><embed>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 109 > 109 1`] = `
+{
+  "expected": "<label></label>//["'\`--&gt;]]&gt;]",
+  "payload": "<label dataformatas="html" datasrc="#xss" datafld="payload"></label>//["'\`-->]]>]</div>",
+  "result": "<label dataformatas="html" datasrc="#xss" datafld="payload"></label>//["'\`--&gt;]]&gt;]",
+}
+`;
+
+exports[`dompurify compatibility > 113 > 113 1`] = `
+{
+  "expected": "<div id="57"><b>alert(57)//0</b>//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="57"><b <script>alert(57)//</script>0</script></b>//["'\`-->]]>]</div>",
+  "result": "<div id="57"><b <script="">alert(57)//0</b>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 117 > 117 1`] = `
+{
+  "expected": "<div id="62">
+
+
+
+//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="62"><!-- IE 6-8 -->
+<x '="foo"><x foo='><img src=x onerror=alert(62)//'>
+<!-- IE 6-9 -->
+<! '="foo"><x foo='><img src=x onerror=alert(2)//'>
+<? '="foo"><x foo='><img src=x onerror=alert(3)//'>//["'\`-->]]>]</div>",
+  "result": "<div id="62"><!-- IE 6-8 -->
+
+
+
+//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 118 > 118 1`] = `
+{
+  "expected": "<div id="63"> // O10.10↓, OM10.0↓, GC6↓, FF
+<img>
+<img> // IE6, O10.10↓, OM10.0↓
+ // IE6, O11.01↓, OM10.1↓//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="63"><embed src="javascript:alert(63)"></embed> // O10.10↓, OM10.0↓, GC6↓, FF
+<img src="javascript:alert(2)">
+<image src="javascript:alert(2)"> // IE6, O10.10↓, OM10.0↓
+<script src="javascript:alert(3)"></script> // IE6, O11.01↓, OM10.1↓//["'\`-->]]>]</div>",
+  "result": "<div id="63"><embed> // O10.10↓, OM10.0↓, GC6↓, FF
+<img>
+<img> // IE6, O10.10↓, OM10.0↓
+ // IE6, O11.01↓, OM10.1↓//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 120 > 120 1`] = `
+{
+  "expected": "<div id="65"><svg xmlns="http://www.w3.org/2000/svg"></svg>//["'\`--&gt;]]&gt;]</div><div id="66"></div>",
+  "payload": "<div id="65"><svg onload="javascript:alert(65)" xmlns="http://www.w3.org/2000/svg"></svg>//["'\`-->]]>]</div><div id="66"><?xml version="1.0"?>",
+  "result": "<div id="65"><svg xmlns="http://www.w3.org/2000/svg"></svg>//["'\`--&gt;]]&gt;]</div><div id="66"><!--?xml version="1.0"?--></div>",
+}
+`;
+
+exports[`dompurify compatibility > 121 > 121 1`] = `
+{
+  "expected": "//["'\`--&gt;]]&gt;]
+<div id="67">
+]&gt;<img>//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<?xml-stylesheet type="text/xsl" href="data:,%3Cxsl:transform version='1.0' xmlns:xsl='http://www.w3.org/1999/XSL/Transform' id='xss'%3E%3Cxsl:output method='html'/%3E%3Cxsl:template match='/'%3E%3Cscript%3Ealert(66)%3C/script%3E%3C/xsl:template%3E%3C/xsl:transform%3E"?>
+<root/>//["'\`-->]]>]</div>
+<div id="67"><!DOCTYPE x [
+    <!ATTLIST img xmlns CDATA "http://www.w3.org/1999/xhtml" src CDATA "xx"
+ onerror CDATA "alert(67)"
+ onload CDATA "alert(2)">
+]><img />//["'\`-->]]>]</div>",
+  "result": "//["'\`--&gt;]]&gt;]
+
+]&gt;//["'\`--&gt;]]&gt;]",
+}
+`;
+
+exports[`dompurify compatibility > 125 > 125 1`] = `
+{
+  "expected": "<div id="71">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="71"><// style=x:expression8alert(71)9>//["'\`-->]]>]</div>",
+  "result": "<div id="71"><!--/ style=x:expression8alert(71)9-->//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 127 > 127 1`] = `
+{
+  "expected": "<div id="73">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="73"><event-source src="event.php" onload="alert(73)">//["'\`-->]]>]</div>",
+  "result": "<div id="73"><event-source src="event.php">//["'\`--&gt;]]&gt;]</event-source></div>",
+}
+`;
+
+exports[`dompurify compatibility > 128 > 128 1`] = `
+{
+  "expected": "<div id="74"><a></a>//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="74"><a href="javascript:alert(74)"><event-source src="data:application/x-dom-event-stream,Event:click%0Adata:XXX%0A%0A" /></a>//["'\`-->]]>]</div>",
+  "result": "<div id="74"><a><event-source></event-source></a>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 130 > 130 1`] = `
+{
+  "expected": "<div id="76">&amp;x;//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="76"><?xml-stylesheet type="text/css"?><!DOCTYPE x SYSTEM "test.dtd"><x>&x;</x>//["'\`-->]]>]</div>",
+  "result": "<div id="76"><!--?xml-stylesheet type="text/css"?-->&amp;x;//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 131 > 131 1`] = `
+{
+  "expected": "<div id="77">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="77"><?xml-stylesheet type="text/css"?><root style="x:expression(alert(77))"/>//["'\`-->]]>]</div>",
+  "result": "<div id="77"><!--?xml-stylesheet type="text/css"?-->//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 132 > 132 1`] = `
+{
+  "expected": "<div id="78"><img xmlns="x-schema:test.xdr">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="78"><?xml-stylesheet type="text/xsl" href="#"?><img xmlns="x-schema:test.xdr"/>//["'\`-->]]>]</div>",
+  "result": "<div id="78"><!--?xml-stylesheet type="text/xsl" href="#"?--><img xmlns="x-schema:test.xdr">//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 133 > 133 1`] = `
+{
+  "expected": "<div id="79">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="79"><object allowscriptaccess="always" data="x"></object>//["'\`-->]]>]</div>",
+  "result": "<div id="79"><object allowscriptaccess="always" data="x"></object>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 136 > 136 1`] = `
+{
+  "expected": "<div id="82">//["'\`--&gt;]]&gt;]</div><div id="83">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="82"><?xml-stylesheet type="text/css" href="data:,*%7bx:expression(write(2));%7d"?>//["'\`-->]]>]</div><div id="83"><x:template xmlns:x="http://www.wapforum.org/2001/wml"  x:ontimer="$(x:unesc)j$(y:escape)a$(z:noecs)v$(x)a$(y)s$(z)cript$x:alert(83)"><x:timer value="1"/></x:template>//["'\`-->]]>]</div>",
+  "result": "<div id="82"><!--?xml-stylesheet type="text/css" href="data:,*%7bx:expression(write(2));%7d"?-->//["'\`--&gt;]]&gt;]</div><div id="83">//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 139 > 139 1`] = `
+{
+  "expected": "<div id="86"><input>//["'\`--&gt;]]&gt;]</div><div id="87"><svg xmlns="http://www.w3.org/2000/svg">
+<a xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="white" height="1000" width="1000"></rect></a>
+</svg>//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="86"><body oninput=alert(86)><input autofocus>//["'\`-->]]>]</div><div id="87"><svg xmlns="http://www.w3.org/2000/svg">
+<a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:alert(87)"><rect width="1000" height="1000" fill="white"/></a>
+</svg>//["'\`-->]]>]</div>",
+  "result": "<div id="86"><input>//["'\`--&gt;]]&gt;]</div><div id="87"><svg xmlns="http://www.w3.org/2000/svg">
+
+</svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 141 > 141 1`] = `
+{
+  "expected": "<div id="90">
+<div style="content:url(test2.svg)"></div>
+
+
+
+
+<div style="background:url(test5.svg)">PRESS ENTER</div>//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="90"><!-- Up to Opera 10.63 -->
+<div style=content:url(test2.svg)></div>
+
+<!-- Up to Opera 11.64 - see link below -->
+
+<!-- Up to Opera 12.x -->
+<div style="background:url(test5.svg)">PRESS ENTER</div>//["'\`-->]]>]</div>",
+  "result": "<div id="90"><!-- Up to Opera 10.63 -->
+<div style="content:url(test2.svg)"></div>
+
+<!-- Up to Opera 11.64 - see link below -->
+
+<!-- Up to Opera 12.x -->
+<div style="background:url(test5.svg)">PRESS ENTER</div>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 142 > 142 1`] = `
+{
+  "expected": "<div id="91">[A]
+"&gt;
+"&gt;
+"&gt;
+[B]
+"&gt;
+[C]
+
+[D]
+&lt;% foo&gt;//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="91">[A]
+<? foo="><script>alert(91)</script>">
+<! foo="><script>alert(91)</script>">
+</ foo="><script>alert(91)</script>">
+[B]
+<? foo="><x foo='?><script>alert(91)</script>'>">
+[C]
+<! foo="[[[x]]"><x foo="]foo><script>alert(91)</script>">
+[D]
+<% foo><x foo="%><script>alert(91)</script>">//["'\`-->]]>]</div>",
+  "result": "<div id="91">[A]
+<!--? foo="-->"&gt;
+<!-- foo="-->"&gt;
+<!-- foo="-->"&gt;
+[B]
+<!--? foo="-->"&gt;
+[C]
+
+[D]
+&lt;% foo&gt;//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 146 > 146 1`] = `
+{
+  "expected": [
+    "<div id="95"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<feImage>
+
+</feImage>
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="95"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+
+<feImage>
+
+</feImage>
+
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="95"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
+<feImage>
+
+</feImage>
+</svg>//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="95"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<feImage>
+<set attributeName="xlink:href" to="data:image/svg+xml;charset=utf-8;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzY3JpcHQ%2BYWxlcnQoMSk8L3NjcmlwdD48L3N2Zz4NCg%3D%3D"/>
+</feImage>
+</svg>//["'\`-->]]>]</div>",
+  "result": "<div id="95"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+
+</svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 148 > 148 1`] = `
+{
+  "expected": "<div id="97">
+<div id="d"></div>
+
+
+<div id="d"></div>
+//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="97"><!-- IE 5-9 -->
+<div id=d><x xmlns="><iframe onload=alert(97)"></div>
+<script>d.innerHTML+='';</script>
+<!-- IE 10 in IE5-9 Standards mode -->
+<div id=d><x xmlns='"><iframe onload=alert(2)//'></div>
+<script>d.innerHTML+='';</script>//["'\`-->]]>]</div>",
+  "result": "<div id="97"><!-- IE 5-9 -->
+<div id="d"></div>
+
+<!-- IE 10 in IE5-9 Standards mode -->
+<div id="d"></div>
+//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 151 > 151 1`] = `
+{
+  "expected": [
+    "<div id="102"><img src="x\` \`&lt;script&gt;alert(102)&lt;/script&gt;">//["'\`--&gt;]]&gt;]</div>",
+    "<div id="102"><img src="x\` \`<script>alert(102)</script>">//["'\`--&gt;]]&gt;]</div>",
+    "<div id="102"><img src="x%60%20%60%3Cscript%3Ealert%28102%29%3C/script%3E">//["'\`--&gt;]]&gt;]</div>",
+    "<div id="102">//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="102"><img src="x\` \`<script>alert(102)</script>"\` \`>//["'\`-->]]>]</div>",
+  "result": "<div id="102"><img src="x\` \`<script>alert(102)</script>" \`="">//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 154 > 154 1`] = `
+{
+  "expected": [
+    "<div id="106"><img src="">//["'\`--&gt;]]&gt;]</div>",
+    "<div id="106"><img>//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="106"><img src onerror /" '"= alt=alert(106)//">//["'\`-->]]>]</div>",
+  "result": "<div id="106"><img src="" "="" '"="alt=alert(106)//&quot;">//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 156 > 156 1`] = `
+{
+  "expected": [
+    "<div id="108">
+<a href="http://foo.bar/#x=\`y"></a><img alt="\`&gt;&lt;img src=xx onerror=alert(108)&gt;&lt;/a&gt;">
+
+<img alt="\`&gt;&lt;img src=xx onerror=alert(2)//">
+<img alt="\`&gt;&lt;img src=xx onerror=alert(3)//">//["'\`--&gt;]]&gt;]</div>",
+    "<div id="108">
+<a href="http://foo.bar/#x=\`y"></a><img alt="\`><img src=xx onerror=alert(108)></a>">
+
+<img alt="\`><img src=xx onerror=alert(2)//">
+<img alt="\`><img src=xx onerror=alert(3)//">//["'\`--&gt;]]&gt;]</div>",
+    "<div id="108">
+<a href="http://foo.bar/#x=%60y"></a><img alt="\`&gt;&lt;img src=xx onerror=alert(108)&gt;&lt;/a&gt;">
+
+<img alt="\`&gt;&lt;img src=xx onerror=alert(2)//">
+<img alt="\`&gt;&lt;img src=xx onerror=alert(3)//">//["'\`--&gt;]]&gt;]</div>",
+    "<div id="108">
+<a href="http://foo.bar/#x=\`y"></a>
+
+<img alt="\`><img src=xx onerror=alert(2)//">
+<img alt="\`><img src=xx onerror=alert(3)//">//["'\`--&gt;]]&gt;]</div>",
+    "<div id="108">
+<a href="http://foo.bar/#x=\`y"></a>
+
+<img alt="\`&gt;&lt;img src=xx onerror=alert(2)//">
+<img alt="\`&gt;&lt;img src=xx onerror=alert(3)//">//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="108"><!-- IE 5-8 standards mode -->
+<a href=http://foo.bar/#x=\`y></a><img alt="\`><img src=xx onerror=alert(108)></a>">
+<!-- IE 5-9 standards mode -->
+<!a foo=x=\`y><img alt="\`><img src=xx onerror=alert(2)//">
+<?a foo=x=\`y><img alt="\`><img src=xx onerror=alert(3)//">//["'\`-->]]>]</div>",
+  "result": "<div id="108"><!-- IE 5-8 standards mode -->
+<a href="http://foo.bar/#x=\`y"></a><img alt="\`><img src=xx onerror=alert(108)></a>">
+<!-- IE 5-9 standards mode -->
+<!--a foo=x=\`y--><img alt="\`><img src=xx onerror=alert(2)//">
+<!--?a foo=x=\`y--><img alt="\`><img src=xx onerror=alert(3)//">//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 157 > 157 1`] = `
+{
+  "expected": [
+    "<div id="109"><svg xmlns="http://www.w3.org/2000/svg">
+<a id="x"><rect height="1000" width="1000" fill="white"></rect></a>
+<rect style="clip-path:url(test3.svg#a);fill:url(#b);filter:url(#c);marker:url(#d);mask:url(#e);stroke:url(#f);" fill="white"></rect>
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="109"><svg xmlns="http://www.w3.org/2000/svg">
+<a id="x"><rect fill="white" width="1000" height="1000" /></a>
+<rect style="clip-path:url(test3.svg#a);fill:url(#b);filter:url(#c);marker:url(#d);mask:url(#e);stroke:url(#f);" fill="white" />
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="109"><svg xmlns="http://www.w3.org/2000/svg">
+<a id="x"><rect fill="white" width="1000" height="1000" FILL="white" /></a>
+<rect style="clip-path:url(test3.svg#a);fill:url(#b);filter:url(#c);marker:url(#d);mask:url(#e);stroke:url(#f);" fill="white" FILL="white" />
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="109"><svg xmlns="http://www.w3.org/2000/svg">
+<a id="x"><rect fill="white" width="1000" height="1000" /></a>
+<rect style="filter: url(&quot;#c&quot;); clip-path: url(&quot;test3.svg#a&quot;); fill: url(#b); marker-end: url(&quot;#d&quot;); marker-mid: url(&quot;#d&quot;); marker-start: url(&quot;#d&quot;); mask: url(&quot;#e&quot;); stroke: url(#f);" fill="white" />
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="109"><svg xmlns="http://www.w3.org/2000/svg">
+<a id="x"><rect fill="white" width="1000" height="1000" /></a>
+<rect style="clip-path: url(&quot;test3.svg#a&quot;); fill: url(#b); marker-end: url(&quot;#d&quot;); marker-mid: url(&quot;#d&quot;); marker-start: url(&quot;#d&quot;); mask: url(&quot;#e&quot;); stroke: url(#f);" fill="white" />
+</svg>//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="109"><svg xmlns="http://www.w3.org/2000/svg">
+<a id="x"><rect fill="white" width="1000" height="1000"/></a>
+<rect  fill="white" style="clip-path:url(test3.svg#a);fill:url(#b);filter:url(#c);marker:url(#d);mask:url(#e);stroke:url(#f);"/>
+</svg>//["'\`-->]]>]</div>",
+  "result": "<div id="109"><svg xmlns="http://www.w3.org/2000/svg">
+
+
+</svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 158 > 158 1`] = `
+{
+  "expected": [
+    "<div id="110"><svg xmlns="http://www.w3.org/2000/svg">
+<path style="marker-start:url(test4.svg#a)" d="M0,0"></path>
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="110"><svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
+<path style="marker-start: url(&quot;test4.svg#a&quot;);" d="M 0 0" />
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="110"><svg xmlns="http://www.w3.org/2000/svg">
+<path style="marker-start:url(test4.svg#a)" d="M 0 0" />
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="110"><svg xmlns="http://www.w3.org/2000/svg">
+<path style="marker-start: url(&quot;test4.svg#a&quot;);" d="M 0 0" />
+</svg>//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="110"><svg xmlns="http://www.w3.org/2000/svg">
+<path d="M0,0" style="marker-start:url(test4.svg#a)"/>
+</svg>//["'\`-->]]>]</div>",
+  "result": "<div id="110"><svg xmlns="http://www.w3.org/2000/svg">
+
+</svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 161 > 161 1`] = `
+{
+  "expected": "<div id="114">XXX//["'\`--&gt;]]&gt;]</div><div id="115">
+//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="114"><x style="background:url('x[a];color:red;/*')">XXX</x>//["'\`-->]]>]</div><div id="115"><!--[if]><script>alert(115)</script -->
+<!--[if<img src=x onerror=alert(2)//]> -->//["'\`-->]]>]</div>",
+  "result": "<div id="114">XXX//["'\`--&gt;]]&gt;]</div><div id="115"><!--[if]><script>alert(115)</script -->
+<!--[if<img src=x onerror=alert(2)//]> -->//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 166 > 166 1`] = `
+{
+  "expected": "<textarea rows="10" cols="50" type="text"></textarea>//["'\`--&gt;]]&gt;]",
+  "payload": "<textarea type="text" cols="50" rows="10"></textarea>//["'\`-->]]>]</div>",
+  "result": "<textarea type="text" cols="50" rows="10"></textarea>//["'\`--&gt;]]&gt;]",
+}
+`;
+
+exports[`dompurify compatibility > 172 > 172 1`] = `
+{
+  "expected": [
+    "<div id="125">]&gt;<svg xmlns="http://www.w3.org/2000/svg">        <circle r="40" fill="red"></circle></svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="125">]&gt;<svg xmlns="http://www.w3.org/2000/svg">                                        <circle r="40" fill="red"></circle></svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="125">]&gt;<svg xmlns="http://www.w3.org/2000/svg">        <circle fill="red" r="40" /></svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="125">]&gt;<svg xmlns="http://www.w3.org/2000/svg">                                        <circle fill="red" r="40" /></svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="125">]&gt;//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="125"><?xml version="1.0"?><?xml-stylesheet type="text/xml" href="#stylesheet"?><!DOCTYPE doc [<!ATTLIST xsl:stylesheet  id    ID    #REQUIRED>]><svg xmlns="http://www.w3.org/2000/svg">    <xsl:stylesheet id="stylesheet" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">        <xsl:template match="/">            <iframe xmlns="http://www.w3.org/1999/xhtml" src="javascript:alert(125)"></iframe>        </xsl:template>    </xsl:stylesheet>    <circle fill="red" r="40"></circle></svg>//["'\`-->]]>]</div>",
+  "result": "<div id="125"><!--?xml version="1.0"?--><!--?xml-stylesheet type="text/xml" href="#stylesheet"?-->]&gt;<svg xmlns="http://www.w3.org/2000/svg">                                        </svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 173 > 173 1`] = `
+{
+  "expected": "<div id="126">
+//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="126"><object id="x" classid="clsid:CB927D12-4FF7-4a9e-A169-56E4B8A75598"></object>
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" onqt_error="alert(126)" style="behavior:url(#x);"><param name=postdomevents /></object>//["'\`-->]]>]</div>",
+  "result": "<div id="126"><object id="x" classid="clsid:CB927D12-4FF7-4a9e-A169-56E4B8A75598"></object>
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" style="behavior:url(#x);"><param name="postdomevents"></object>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 174 > 174 1`] = `
+{
+  "expected": [
+    "<div id="127"><svg id="x" xmlns="http://www.w3.org/2000/svg">
+
+alert(127)
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="127"><svg id="x" xmlns="http://www.w3.org/2000/svg">
+
+
+</svg>//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="127"><svg xmlns="http://www.w3.org/2000/svg" id="x">
+<listener event="load" handler="#y" xmlns="http://www.w3.org/2001/xml-events" observer="x"/>
+<handler id="y">alert(127)</handler>
+</svg>//["'\`-->]]>]</div>",
+  "result": "<div id="127"><svg xmlns="http://www.w3.org/2000/svg" id="x">
+
+alert(127)
+</svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 175 > 175 1`] = `
+{
+  "expected": [
+    "<div id="128"><svg><style></style></svg><img src="x">//["'\`--&gt;]]&gt;]</div>",
+    "<div id="128"><svg><style><img src="x">//["'\`--&gt;]]&gt;]</img></style></svg></div>",
+    "<div id="128"><svg><style><img src="x"></style></svg></div>",
+  ],
+  "payload": "<div id="128"><svg><style><img/src=x onerror=alert(128)// </b>//["'\`-->]]>]</div>",
+  "result": "<div id="128"><svg></svg><img src="x" <="" b="">//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 178 > 178 1`] = `
+{
+  "expected": [
+    "<div id="132">
+<form>
+<label>type a,b,c,d - watch the network tab/traffic (JS is off, latest NoScript)</label>
+<br>
+<input type="password" name="secret">
+</form>
+<svg height="50px">
+<image xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+
+
+</image>
+</svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="132">
+<form>
+<label>type a,b,c,d - watch the network tab/traffic (JS is off, latest NoScript)</label>
+<br>
+<input name="secret" type="password">
+</form>
+<svg height="50px">
+<image xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+
+
+</image>
+</svg>//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="132"><!doctype html>
+<form>
+<label>type a,b,c,d - watch the network tab/traffic (JS is off, latest NoScript)</label>
+<br>
+<input name="secret" type="password">
+</form>
+<!-- injection --><svg height="50px">
+<image xmlns:xlink="http://www.w3.org/1999/xlink">
+<set attributeName="xlink:href" begin="accessKey(a)" to="//example.com/?a" />
+<set attributeName="xlink:href" begin="accessKey(b)" to="//example.com/?b" />
+<set attributeName="xlink:href" begin="accessKey(c)" to="//example.com/?c" />
+<set attributeName="xlink:href" begin="accessKey(d)" to="//example.com/?d" />
+</image>
+</svg>//["'\`-->]]>]</div>",
+  "result": "<div id="132">
+<form>
+<label>type a,b,c,d - watch the network tab/traffic (JS is off, latest NoScript)</label>
+<br>
+<input name="secret" type="password">
+</form>
+<!-- injection --><svg height="50px">
+
+
+
+
+
+
+</svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 179 > 179 1`] = `
+{
+  "expected": "<div id="133">//["'\`--&gt;]]&gt;]</div>",
+  "payload": "<div id="133"><!-- \`<img/src=xxx onerror=alert(133)//--!>//["'\`-->]]>]</div>",
+  "result": "<div id="133"><!-- \`<img/src=xxx onerror=alert(133)//-->//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > 182 > 182 1`] = `
+{
+  "expected": [
+    "<div id="136"><form method="post" action="x">
+<input value="admin" name="username">
+<input value="secret" type="password" name="password">
+<input value="injected" name="injected">
+<input type="submit">
+</form>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="136"><form method="post" action="x">
+<input value="admin" name="username">
+<input value="secret" name="password" type="password">
+<input value="injected" name="injected">
+<input type="submit">
+</form>//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="136"><form action="x" method="post">
+<input name="username" value="admin" />
+<input name="password" type="password" value="secret" />
+<input name="injected" value="injected" dirname="password" />
+<input type="submit">
+</form>//["'\`-->]]>]</div>",
+  "result": "<div id="136"><form action="x" method="post">
+<input name="username" value="admin">
+<input name="password" type="password" value="secret">
+<input name="injected" value="injected" dirname="password">
+<input type="submit">
+</form>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > Avoid over-zealous stripping of SVG filter elements (see #144) > Avoid over-zealous stripping of SVG filter elements (see #144) 1`] = `
+{
+  "expected": "<svg><defs><filter id="f1"><feGaussianBlur stdDeviation="15" in="SourceGraphic"></feGaussianBlur></filter></defs><rect filter="url(#f1)" fill="yellow" stroke-width="3" stroke="green" height="90" width="90"></rect></svg>",
+  "payload": "<svg><defs><filter id="f1"><feGaussianBlur in="SourceGraphic" stdDeviation="15" /></filter></defs><rect width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)" /></svg>",
+  "result": "<svg></svg>",
+}
+`;
+
+exports[`dompurify compatibility > Bypass using DOM bugs when dealing with JS URIs in arbitrary attributes (II) > Bypass using DOM bugs when dealing with JS URIs in arbitrary attributes (II) 1`] = `
+{
+  "expected": "<form><hr><label>This is a searchable index. Enter search keywords: <input label="variation of bypass by @giutro" name="isindex"></label><hr></form>",
+  "payload": "<isindex x="javascript:" onmouseover="alert(1)" label="variation of bypass by @giutro">",
+  "result": "",
+}
+`;
+
+exports[`dompurify compatibility > Bypass using event handlers and unknown attributes > Bypass using event handlers and unknown attributes 1`] = `
+{
+  "expected": "<button>@giutro</button>",
+  "payload": "<button remove=me onmousedown="javascript:alert(1);" onclick="javascript:alert(1)" >@giutro",
+  "result": "<button remove="me">@giutro</button>",
+}
+`;
+
+exports[`dompurify compatibility > Bypass using multiple unknown attributes > Bypass using multiple unknown attributes 1`] = `
+{
+  "expected": "<div>@superevr</div>",
+  "payload": "<div onmouseout="javascript:alert(/superevr/)" x=yscript: n>@superevr</div>",
+  "result": "<div n="">@superevr</div>",
+}
+`;
+
+exports[`dompurify compatibility > Bypass using unknown attributes III > Bypass using unknown attributes III 1`] = `
+{
+  "expected": "<div>text</div>",
+  "payload": "<div wow=removeme onmouseover=alert(1)>text",
+  "result": "<div wow="removeme">text</div>",
+}
+`;
+
+exports[`dompurify compatibility > Bypass using unknown attributes V > Bypass using unknown attributes V 1`] = `
+{
+  "expected": "<form><hr><label>This is a searchable index. Enter search keywords: <input name="isindex" label="bypass by @giutro"></label><hr></form>",
+  "payload": "<isindex src="javascript:" onmouseover="alert(1)" label="bypass by @giutro" />",
+  "result": "",
+}
+`;
+
+exports[`dompurify compatibility > DOM Clobbering against an empty cookie > DOM Clobbering against an empty cookie 1`] = `
+{
+  "expected": "<img src="x">",
+  "payload": "<img src=x name=cookie>",
+  "result": "<img src="x" name="cookie">",
+}
+`;
+
+exports[`dompurify compatibility > DOM Clobbering against document.createElement() (see #47) > DOM Clobbering against document.createElement() (see #47) 1`] = `
+{
+  "expected": "<img src="x"><img src="y">",
+  "payload": "<img src=x name=createElement><img src=y id=createElement>",
+  "result": "<img src="x" name="createElement"><img src="y" id="createElement">",
+}
+`;
+
+exports[`dompurify compatibility > DOM clobbering XSS by @irsdl using attributes > DOM clobbering XSS by @irsdl using attributes 1`] = `
+{
+  "expected": [
+    "",
+    "<form><input><input></form>",
+  ],
+  "payload": "<form onmouseover='alert(1)'><input name="attributes"><input name="attributes">",
+  "result": "<form><input name="attributes"><input name="attributes"></form>",
+}
+`;
+
+exports[`dompurify compatibility > DOM clobbering attack using activeElement > DOM clobbering attack using activeElement 1`] = `
+{
+  "expected": "<img><svg></svg>",
+  "payload": "<image name=activeElement><svg onload=alert(1)>",
+  "result": "<img name="activeElement"><svg></svg>",
+}
+`;
+
+exports[`dompurify compatibility > DOM clobbering attack using name=body > DOM clobbering attack using name=body 1`] = `
+{
+  "expected": "<img><img>@mmrupp<img><svg></svg>",
+  "payload": "<image name=body><image name=adoptNode>@mmrupp<image name=firstElementChild><svg onload=alert(1)>",
+  "result": "<img name="body"><img name="adoptNode">@mmrupp<img name="firstElementChild"><svg></svg>",
+}
+`;
+
+exports[`dompurify compatibility > DOM clobbering attack using name=body and injecting SVG + keygen > DOM clobbering attack using name=body and injecting SVG + keygen 1`] = `
+{
+  "expected": "<img><img src="x"><svg>, </svg>",
+  "payload": "<image name=body><img src=x><svg onload=alert(1); autofocus>, <keygen onfocus=alert(1); autofocus>",
+  "result": "<img name="body"><img src="x"><svg>, </svg>",
+}
+`;
+
+exports[`dompurify compatibility > DOM clobbering: acceptCharset > DOM clobbering: acceptCharset 1`] = `
+{
+  "expected": "<input>123",
+  "payload": "<input name=acceptCharset>123",
+  "result": "<input name="acceptCharset">123",
+}
+`;
+
+exports[`dompurify compatibility > DOM clobbering: getElementById > DOM clobbering: getElementById 1`] = `
+{
+  "expected": "<img src="x">",
+  "payload": "<img src=x name=getElementById>",
+  "result": "<img src="x" name="getElementById">",
+}
+`;
+
+exports[`dompurify compatibility > DOM clobbering: hasChildNodes > DOM clobbering: hasChildNodes 1`] = `
+{
+  "expected": "<form><input></form>",
+  "payload": "<form><input name=hasChildNodes>",
+  "result": "<form><input name="hasChildNodes"></form>",
+}
+`;
+
+exports[`dompurify compatibility > DOM clobbering: location > DOM clobbering: location 1`] = `
+{
+  "expected": "<a href="#some-code-here">invisible</a>",
+  "payload": "<a href="#some-code-here" id="location">invisible",
+  "result": "<a href="#some-code-here" id="location">invisible</a>",
+}
+`;
+
+exports[`dompurify compatibility > DOM clobbering: submit > DOM clobbering: submit 1`] = `
+{
+  "expected": "<input>123",
+  "payload": "<input name=submit>123",
+  "result": "<input name="submit">123",
+}
+`;
+
+exports[`dompurify compatibility > Don't remove ARIA attributes if not prohibited (see #203) > Don't remove ARIA attributes if not prohibited (see #203) 1`] = `
+{
+  "expected": "<div class="msg" role="dialog" aria-labelledby="msg--title"><button type="button" aria-label="close" class="modal-close"><i class="icon-close"></i>some button</button></div>",
+  "payload": "<div aria-labelledby="msg--title" role="dialog" class="msg"><button class="modal-close" aria-label="close" type="button"><i class="icon-close"></i>some button</button></div>",
+  "result": "<div aria-labelledby="msg--title" role="dialog" class="msg"><button class="modal-close" aria-label="close" type="button"><i class="icon-close"></i>some button</button></div>",
+}
+`;
+
+exports[`dompurify compatibility > Don't remove binary attributes if considered safe (see #168) > Don't remove binary attributes if considered safe (see #168) 1`] = `
+{
+  "expected": "<input checked="" type="checkbox"><input type="checkbox">",
+  "payload": "<input type=checkbox checked><input type=checkbox onclick>",
+  "result": "<input type="checkbox" checked=""><input type="checkbox">",
+}
+`;
+
+exports[`dompurify compatibility > Don't remove data URIs from SVG images (see #205) > Don't remove data URIs from SVG images (see #205) 1`] = `
+{
+  "expected": "<svg><image style="border-color: rgb(51, 51, 51); box-sizing: border-box; color: rgb(51, 51, 51); cursor: move; font-family: sans-serif; font-size: 14px; line-height: 20px; outline-color: rgb(51, 51, 51); text-size-adjust: 100%; column-rule-color: rgb(51, 51, 51); -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-text-emphasis-color: rgb(51, 51, 51); -webkit-text-fill-color: rgb(51, 51, 51); -webkit-text-stroke-color: rgb(51, 51, 51); user-select: none; vector-effect: non-scaling-stroke;" xlink:href="data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20height%3D%22100%22%20width%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20data-name%3D%22Layer%201%22%20id%3D%22Layer_1%22%3E%0A%20%20%3Ctitle%3ECompute%3C%2Ftitle%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20fill%3D%22%239d5025%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2224.74%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23f58536%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2222.26%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E" xmlns:xlink="http://www.w3.org/1999/xlink" height="500" width="500" id="v-146"></image></svg>",
+  "payload": "<svg><image id="v-146" width="500" height="500" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20height%3D%22100%22%20width%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20data-name%3D%22Layer%201%22%20id%3D%22Layer_1%22%3E%0A%20%20%3Ctitle%3ECompute%3C%2Ftitle%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20fill%3D%22%239d5025%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2224.74%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23f58536%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2222.26%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E" preserveratio="true" style="border-color: rgb(51, 51, 51); box-sizing: border-box; color: rgb(51, 51, 51); cursor: move; font-family: sans-serif; font-size: 14px; line-height: 20px; outline-color: rgb(51, 51, 51); text-size-adjust: 100%; column-rule-color: rgb(51, 51, 51); -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-text-emphasis-color: rgb(51, 51, 51); -webkit-text-fill-color: rgb(51, 51, 51); -webkit-text-stroke-color: rgb(51, 51, 51); user-select: none; vector-effect: non-scaling-stroke;"></image></svg>",
+  "result": "<svg></svg>",
+}
+`;
+
+exports[`dompurify compatibility > Don't remove data URIs from SVG images, with href attribute > Don't remove data URIs from SVG images, with href attribute 1`] = `
+{
+  "expected": "<svg><image style="border-color: rgb(51, 51, 51); box-sizing: border-box; color: rgb(51, 51, 51); cursor: move; font-family: sans-serif; font-size: 14px; line-height: 20px; outline-color: rgb(51, 51, 51); text-size-adjust: 100%; column-rule-color: rgb(51, 51, 51); -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-text-emphasis-color: rgb(51, 51, 51); -webkit-text-fill-color: rgb(51, 51, 51); -webkit-text-stroke-color: rgb(51, 51, 51); user-select: none; vector-effect: non-scaling-stroke;" href="data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20height%3D%22100%22%20width%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20data-name%3D%22Layer%201%22%20id%3D%22Layer_1%22%3E%0A%20%20%3Ctitle%3ECompute%3C%2Ftitle%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20fill%3D%22%239d5025%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2224.74%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23f58536%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2222.26%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E" xmlns:xlink="http://www.w3.org/1999/xlink" height="500" width="500" id="v-146"></image></svg>",
+  "payload": "<svg><image id="v-146" width="500" height="500" xmlns:xlink="http://www.w3.org/1999/xlink" href="data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20height%3D%22100%22%20width%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20data-name%3D%22Layer%201%22%20id%3D%22Layer_1%22%3E%0A%20%20%3Ctitle%3ECompute%3C%2Ftitle%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20fill%3D%22%239d5025%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2224.74%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23f58536%22%20ry%3D%229.12%22%20rx%3D%229.12%22%20height%3D%2253%22%20width%3D%2253%22%20y%3D%2222.26%22%20x%3D%2223.5%22%3E%3C%2Frect%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E" preserveratio="true" style="border-color: rgb(51, 51, 51); box-sizing: border-box; color: rgb(51, 51, 51); cursor: move; font-family: sans-serif; font-size: 14px; line-height: 20px; outline-color: rgb(51, 51, 51); text-size-adjust: 100%; column-rule-color: rgb(51, 51, 51); -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-text-emphasis-color: rgb(51, 51, 51); -webkit-text-fill-color: rgb(51, 51, 51); -webkit-text-stroke-color: rgb(51, 51, 51); user-select: none; vector-effect: non-scaling-stroke;"></image></svg>",
+  "result": "<svg></svg>",
+}
+`;
+
+exports[`dompurify compatibility > Fixed an exception coming from missing clobbering protection > Fixed an exception coming from missing clobbering protection 1`] = `
+{
+  "expected": [
+    "",
+    "<form><input></form>",
+  ],
+  "payload": "<form><input name=namespaceURI>",
+  "result": "<form><input name="namespaceURI"></form>",
+}
+`;
+
+exports[`dompurify compatibility > Image after self-closing style to trick jQuery tag-completion > Image after self-closing style to trick jQuery tag-completion 1`] = `
+{
+  "expected": "<b></b>",
+  "payload": "<b><style><style////><img src=x onerror=alert(1)></style>",
+  "result": "<b><style><style////><img src=x onerror=alert(1)></style></b>",
+}
+`;
+
+exports[`dompurify compatibility > Image after style to trick jQuery tag-completion > Image after style to trick jQuery tag-completion 1`] = `
+{
+  "expected": "<b></b>",
+  "payload": "<b><style><style/><img src=x onerror=alert(1)>",
+  "result": "<b><style><style/><img src=x onerror=alert(1)></style></b>",
+}
+`;
+
+exports[`dompurify compatibility > Image with data URI src > Image with data URI src 1`] = `
+{
+  "expected": "<img src="data:image/jpeg,ab798ewqxbaudbuoibeqbla">",
+  "payload": "<img src=data:image/jpeg,ab798ewqxbaudbuoibeqbla>",
+  "result": "<img>",
+}
+`;
+
+exports[`dompurify compatibility > Image with data URI src with whitespace > Image with data URI src with whitespace 1`] = `
+{
+  "expected": "<img src="data:image/jpeg,ab798ewqxbaudbuoibeqbla">",
+  "payload": "<img src="
+data:image/jpeg,ab798ewqxbaudbuoibeqbla">",
+  "result": "<img>",
+}
+`;
+
+exports[`dompurify compatibility > Img element inside noscript terminated inside attribute > Img element inside noscript terminated inside attribute 1`] = `
+{
+  "expected": [
+    "<b></b>",
+    "<b><img src="x">"&gt;</b>",
+    "<b><a alt="</noscript><img src=x onerror=alert(1)>"></a></b>",
+    "<b><a alt="&lt;/noscript&gt;&lt;img src=x onerror=alert(1)&gt;"></a></b>",
+  ],
+  "payload": "<b><noscript><a alt="</noscript><img src=x onerror=alert(1)>"></noscript>",
+  "result": "<b><noscript><a alt="</noscript><img src=x onerror=alert(1)>"></a></noscript></b>",
+}
+`;
+
+exports[`dompurify compatibility > Img element inside noscript terminated inside comment > Img element inside noscript terminated inside comment 1`] = `
+{
+  "expected": "<b></b>",
+  "payload": "<b><noscript><!-- </noscript><img src=x onerror=alert(1) --></noscript>",
+  "result": "<b><noscript><!-- </noscript><img src=x onerror=alert(1) --></noscript></b>",
+}
+`;
+
+exports[`dompurify compatibility > Img inside style inside broken option element > Img inside style inside broken option element 1`] = `
+{
+  "expected": "<option></option>",
+  "payload": "<option><style></option></select><b><img src=x onerror=alert(1)></style></option>",
+  "result": "<option><style></option></select><b><img src=x onerror=alert(1)></style></option>",
+}
+`;
+
+exports[`dompurify compatibility > Inline SVG (data-uri) > Inline SVG (data-uri) 1`] = `
+{
+  "expected": [
+    "<div id="129"><svg><image style="filter:url(&quot;data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22&gt;&lt;script&gt;parent.alert(129)&lt;/script&gt;&lt;/svg&gt;&quot;)">
+
+</image></svg>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="129"><svg><image style="filter:url(&quot;data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><script>parent.alert(129)</script></svg>&quot;)">
+
+</image></svg>//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="129"><svg><image style='filter:url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><script>parent.alert(129)</script></svg>")'>
+<!--
+Same effect with
+<image filter='...'>
+-->
+</svg>//["'\`-->]]>]</div>",
+  "result": "<div id="129"><svg>
+
+</svg>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > JavaScript URIs using Unicode LS/PS I > JavaScript URIs using Unicode LS/PS I 1`] = `
+{
+  "expected": "123<a>I am a dolphin!</a>",
+  "payload": "123<a href=' javascript:alert(1)'>I am a dolphin!</a>",
+  "result": "123<a href=" javascript:alert(1)">I am a dolphin!</a>",
+}
+`;
+
+exports[`dompurify compatibility > JavaScript URIs using Unicode LS/PS II > JavaScript URIs using Unicode LS/PS II 1`] = `
+{
+  "expected": "123<a>I am a dolphin too!</a>",
+  "payload": "123<a href=' javascript:alert(1)'>I am a dolphin too!</a>",
+  "result": "123<a href=" javascript:alert(1)">I am a dolphin too!</a>",
+}
+`;
+
+exports[`dompurify compatibility > JavaScript URIs using Unicode Whitespace > JavaScript URIs using Unicode Whitespace 1`] = `
+{
+  "expected": "123<a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a><a>CLICK</a>",
+  "payload": "123<a href=' javascript:alert(1)'>CLICK</a><a href='&#xA0javascript:alert(1)'>CLICK</a><a href='&#x1680;javascript:alert(1)'>CLICK</a><a href='&#x180E;javascript:alert(1)'>CLICK</a><a href='&#x2000;javascript:alert(1)'>CLICK</a><a href='&#x2001;javascript:alert(1)'>CLICK</a><a href='&#x2002;javascript:alert(1)'>CLICK</a><a href='&#x2003;javascript:alert(1)'>CLICK</a><a href='&#x2004;javascript:alert(1)'>CLICK</a><a href='&#x2005;javascript:alert(1)'>CLICK</a><a href='&#x2006;javascript:alert(1)'>CLICK</a><a href='&#x2006;javascript:alert(1)'>CLICK</a><a href='&#x2007;javascript:alert(1)'>CLICK</a><a href='&#x2008;javascript:alert(1)'>CLICK</a><a href='&#x2009;javascript:alert(1)'>CLICK</a><a href='&#x200A;javascript:alert(1)'>CLICK</a><a href='&#x200B;javascript:alert(1)'>CLICK</a><a href='&#x205f;javascript:alert(1)'>CLICK</a><a href='&#x3000;javascript:alert(1)'>CLICK</a>",
+  "result": "123<a href=" javascript:alert(1)">CLICK</a><a href="&nbsp;javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href="᠎javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href="​javascript:alert(1)">CLICK</a><a href=" javascript:alert(1)">CLICK</a><a href="　javascript:alert(1)">CLICK</a>",
+}
+`;
+
+exports[`dompurify compatibility > Low-range-ASCII obfuscated JavaScript URI > Low-range-ASCII obfuscated JavaScript URI 1`] = `
+{
+  "expected": "<a>@shafigullin</a><a></a>",
+  "payload": "<a href="javascript:alert(1)">@shafigullin<a>",
+  "result": "<a href="javascript:alert(1)">@shafigullin</a><a></a>",
+}
+`;
+
+exports[`dompurify compatibility > MathML > MathML 1`] = `
+{
+  "expected": [
+    "<div id="130"><math>CLICKME</math>
+<math>
+
+
+
+
+
+</math>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="130"><math>CLICKME</math>
+<math>
+
+CLICKME
+
+
+CLICKME<mtext>http://http://google.com</mtext>
+</math>//["'\`--&gt;]]&gt;]</div>",
+    "<div id="130"><math>CLICKME</math>
+//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="130"><math href="javascript:alert(130)">CLICKME</math>
+<math>
+<!-- up to FF 13 -->
+<maction actiontype="statusline#http://google.com" xlink:href="javascript:alert(2)">CLICKME</maction>
+
+<!-- FF 14+ -->
+<maction actiontype="statusline" xlink:href="javascript:alert(3)">CLICKME<mtext>http://http://google.com</mtext></maction>
+</math>//["'\`-->]]>]</div>",
+  "result": "<div id="130"><math>CLICKME</math>
+<math>
+<!-- up to FF 13 -->
+CLICKME
+
+<!-- FF 14+ -->
+CLICKMEhttp://http://google.com
+</math>//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > MathML example > MathML example 1`] = `
+{
+  "expected": [
+    "<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <menclose notation="box"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box"><mi mathcolor="#FF0000">a</mi></menclose><mo>,</mo>
+    <menclose mathcolor="#FF0000" notation="box"><mi>a</mi></menclose><mo>,</mo>
+    <menclose mathbackground="#80FF80" notation="box"><mi mathcolor="#FF0000">a</mi></menclose><mo>,</mo>
+    <menclose mathbackground="#80FF80" mathcolor="#FF0000" notation="box"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box"><mi mathbackground="#80FF80">a</mi></menclose>
+  </mrow>
+</math>",
+    "<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <menclose notation="box"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box"><mi mathcolor="#FF0000">a</mi></menclose><mo>,</mo>
+    <menclose notation="box" mathcolor="#FF0000"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box" mathbackground="#80FF80"><mi mathcolor="#FF0000">a</mi></menclose><mo>,</mo>
+    <menclose notation="box" mathcolor="#FF0000" mathbackground="#80FF80"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box"><mi mathbackground="#80FF80">a</mi></menclose>
+  </mrow>
+</math>",
+  ],
+  "payload": "<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <menclose notation="box"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box"><mi mathcolor="#FF0000">a</mi></menclose><mo>,</mo>
+    <menclose notation="box" mathcolor="#FF0000"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box" mathbackground="#80FF80"><mi mathcolor="#FF0000">a</mi></menclose><mo>,</mo>
+    <menclose notation="box" mathcolor="#FF0000" mathbackground="#80FF80"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box"><mi mathbackground="#80FF80">a</mi></menclose>
+  </mrow>
+</math>",
+  "result": "<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <menclose notation="box"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box"><mi mathcolor="#FF0000">a</mi></menclose><mo>,</mo>
+    <menclose notation="box" mathcolor="#FF0000"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box" mathbackground="#80FF80"><mi mathcolor="#FF0000">a</mi></menclose><mo>,</mo>
+    <menclose notation="box" mathcolor="#FF0000" mathbackground="#80FF80"><mi>a</mi></menclose><mo>,</mo>
+    <menclose notation="box"><mi mathbackground="#80FF80">a</mi></menclose>
+  </mrow>
+</math>",
+}
+`;
+
+exports[`dompurify compatibility > SVG > SVG 1`] = `
+{
+  "expected": [
+    "<div id="135">
+
+<template>
+
+
+</template>
+//["'\`--&gt;]]&gt;]</div>",
+    "<div id="135">
+
+<template>
+new ActiveXObject('htmlfile').parentWindow.alert(135)
+
+</template>
+//["'\`--&gt;]]&gt;]</div>",
+    "<div id="135">
+
+<template>
+new ActiveXObject('htmlfile').parentWindow.alert(135)
+<head></head><body></body>
+</template>
+//["'\`--&gt;]]&gt;]</div>",
+    "<div id="135">
+
+
+//["'\`--&gt;]]&gt;]</div>",
+  ],
+  "payload": "<div id="135"><?xml-stylesheet type="text/xsl" href="#" ?>
+<stylesheet xmlns="http://www.w3.org/TR/WD-xsl">
+<template match="/">
+<eval>new ActiveXObject('htmlfile').parentWindow.alert(135)</eval>
+<if expr="new ActiveXObject('htmlfile').parentWindow.alert(2)"></if>
+</template>
+</stylesheet>//["'\`-->]]>]</div>",
+  "result": "<div id="135"><!--?xml-stylesheet type="text/xsl" href="#" ?-->
+
+
+//["'\`--&gt;]]&gt;]</div>",
+}
+`;
+
+exports[`dompurify compatibility > SVG > SVG 2`] = `
+{
+  "expected": "<div id="137"><svg>
+<a xlink:href="?" xmlns:xlink="http://www.w3.org/1999/xlink">
+<circle r="400"></circle>
+
+</a>//["'\`--&gt;]]&gt;]</svg></div>",
+  "payload": "<div id="137"><svg>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="?">
+<circle r="400"></circle>
+<animate attributeName="xlink:href" begin="0" from="javascript:alert(137)" to="&" />
+</a>//["'\`-->]]>]</div>",
+  "result": "<div id="137"><svg>
+
+
+
+//["'\`--&gt;]]&gt;]</svg></div>",
+}
+`;
+
+exports[`dompurify compatibility > Special esacpes in protocol handler for XSS in Blink > Special esacpes in protocol handler for XSS in Blink 1`] = `
+{
+  "expected": "<a>@shafigullin</a><a></a>",
+  "payload": "<a href="javascript:alert(1)">@shafigullin<a>",
+  "result": "<a href="javascript:alert(1)">@shafigullin</a><a></a>",
+}
+`;
+
+exports[`dompurify compatibility > Test against fake-element-based namepsace-confusion abusing mXSS attacks 1/2 > Test against fake-element-based namepsace-confusion abusing mXSS attacks 1/2 1`] = `
+{
+  "expected": "a<svg><desc></desc></svg>",
+  "payload": "a<svg><xss><desc><noscript>&lt;/noscript>&lt;/desc>&lt;s>&lt/s>&lt;style>&lt;a title="&lt;/style>&lt;img src onerror=alert(1)>">",
+  "result": "a<svg>&lt;/noscript&gt;&lt;/desc&gt;&lt;s&gt;&lt;/s&gt;&lt;style&gt;&lt;a title="&lt;/style&gt;&lt;img src onerror=alert(1)&gt;"&gt;</svg>",
+}
+`;
+
+exports[`dompurify compatibility > Tests against attribute-based mXSS behavior 1/3 > Tests against attribute-based mXSS behavior 1/3 1`] = `
+{
+  "expected": [
+    "<svg></svg><p></p><style><g title="</style><img src="x">"&gt;",
+    "<svg></svg><p></p><img src="x">"&gt;",
+    "<svg></svg><p><img src="x">"&gt;</p>",
+  ],
+  "payload": "<svg><p><style><g title="</style><img src=x onerror=alert(1)>">",
+  "result": "<svg></svg><p><style><g title="</style><img src="x">"&gt;</p>",
+}
+`;
+
+exports[`dompurify compatibility > Tests against attribute-based mXSS behavior 2/3 > Tests against attribute-based mXSS behavior 2/3 1`] = `
+{
+  "expected": "<svg></svg>",
+  "payload": "<svg><foreignobject><p><style><p title="</style><iframe onload&#x3d;alert(1)<!--"></style>",
+  "result": "<svg>&lt;p title="&lt;/style&gt;</svg>",
+}
+`;
+
+exports[`dompurify compatibility > Tests against attribute-based mXSS behavior 3/3 > Tests against attribute-based mXSS behavior 3/3 1`] = `
+{
+  "expected": "<math></math>",
+  "payload": "<math><annotation-xml encoding="text/html"><p><style><p title="</style><iframe onload&#x3d;alert(1)<!--"></style>",
+  "result": "<math>&lt;p title="&lt;/style&gt;</math>",
+}
+`;
+
+exports[`dompurify compatibility > Tests against nesting-based mXSS behavior 1/5 > Tests against nesting-based mXSS behavior 1/5 1`] = `
+{
+  "expected": "<form><math><mtext><form></form></mtext></math></form>",
+  "payload": "<form><math><mtext></form><form><mglyph><style><img src=x onerror=alert(1)>",
+  "result": "<form><math><mtext><form>&lt;img src=x onerror=alert(1)&gt;</form></mtext></math></form>",
+}
+`;
+
+exports[`dompurify compatibility > Tests against nesting-based mXSS behavior 2/5 > Tests against nesting-based mXSS behavior 2/5 1`] = `
+{
+  "expected": "<math><mtext><table></table></mtext></math>",
+  "payload": "<math><mtext><table><mglyph><style><math href=javascript:alert(1)>CLICKME</math>",
+  "result": "<math><mtext>&lt;math href=javascript:alert(1)&gt;CLICKME&lt;/math&gt;<table></table></mtext></math>",
+}
+`;
+
+exports[`dompurify compatibility > Tests against nesting-based mXSS behavior 3/5 > Tests against nesting-based mXSS behavior 3/5 1`] = `
+{
+  "expected": "<math><mtext><table></table></mtext></math>",
+  "payload": "<math><mtext><table><mglyph><style><!--</style><img title="--&gt;&lt;img src=1 onerror=alert(1)&gt;">",
+  "result": "<math><mtext>&lt;!--<table></table></mtext></math>",
+}
+`;
+
+exports[`dompurify compatibility > Textarea and comments enabling img element > Textarea and comments enabling img element 1`] = `
+{
+  "expected": "<textarea>@shafigullin</textarea>",
+  "payload": "<textarea>@shafigullin</textarea><!--</textarea><img src=x onerror=alert(1)>-->",
+  "result": "<textarea>@shafigullin</textarea><!--</textarea><img src=x onerror=alert(1)>-->",
+}
+`;
+
+exports[`dompurify compatibility > mXSS Variation I > mXSS Variation I 1`] = `
+{
+  "expected": "&lt;img onerror="alert(1);//" src=x&gt;",
+  "payload": "<listing>&lt;img onerror="alert(1);//" src=x&gt;<t t></listing>",
+  "result": "<listing>&lt;img onerror="alert(1);//" src=x&gt;</listing>",
+}
+`;
+
+exports[`dompurify compatibility > mXSS Variation II > mXSS Variation II 1`] = `
+{
+  "expected": "<img id="" src="x">",
+  "payload": "<img src=x id/=' onerror=alert(1)//'>",
+  "result": "<img src="x" id="" ='="">",
+}
+`;
+
+exports[`dompurify compatibility > onclick, onsubmit, onfocus; DOM clobbering: parentNode > onclick, onsubmit, onfocus; DOM clobbering: parentNode 1`] = `
+{
+  "expected": "<div><form><input>123</form></div>",
+  "payload": "<div onclick=alert(0)><form onsubmit=alert(1)><input onfocus=alert(2) name=parentNode>123</form></div>",
+  "result": "<div><form><input name="parentNode">123</form></div>",
+}
+`;
+
+exports[`dompurify compatibility > onsubmit, onfocus; DOM clobbering: attributes > onsubmit, onfocus; DOM clobbering: attributes 1`] = `
+{
+  "expected": "<form><input>123</form>",
+  "payload": "<form onsubmit=alert(1)><input onfocus=alert(2) name=attributes>123</form>",
+  "result": "<form><input name="attributes">123</form>",
+}
+`;
+
+exports[`dompurify compatibility > onsubmit, onfocus; DOM clobbering: children > onsubmit, onfocus; DOM clobbering: children 1`] = `
+{
+  "expected": "<form><input>123</form>",
+  "payload": "<form onsubmit=alert(1)><input onfocus=alert(2) name=children>123</form>",
+  "result": "<form><input name="children">123</form>",
+}
+`;
+
+exports[`dompurify compatibility > onsubmit, onfocus; DOM clobbering: nodeName > onsubmit, onfocus; DOM clobbering: nodeName 1`] = `
+{
+  "expected": "<form><input>123</form>",
+  "payload": "<form onsubmit=alert(1)><input onfocus=alert(2) name=nodeName>123</form>",
+  "result": "<form><input name="nodeName">123</form>",
+}
+`;
+
+exports[`dompurify compatibility > onsubmit, onfocus; DOM clobbering: nodeType > onsubmit, onfocus; DOM clobbering: nodeType 1`] = `
+{
+  "expected": "<form><input>123</form>",
+  "payload": "<form onsubmit=alert(1)><input onfocus=alert(2) name=nodeType>123</form>",
+  "result": "<form><input name="nodeType">123</form>",
+}
+`;
+
+exports[`dompurify compatibility > onsubmit, onfocus; DOM clobbering: removeAttributeNode > onsubmit, onfocus; DOM clobbering: removeAttributeNode 1`] = `
+{
+  "expected": "<form><input>123</form>",
+  "payload": "<form onsubmit=alert(1)><input onfocus=alert(2) name=removeAttributeNode>123</form>",
+  "result": "<form><input name="removeAttributeNode">123</form>",
+}
+`;
+
+exports[`dompurify compatibility > onsubmit, onfocus; DOM clobbering: removeChild > onsubmit, onfocus; DOM clobbering: removeChild 1`] = `
+{
+  "expected": "<form><input>123</form>",
+  "payload": "<form onsubmit=alert(1)><input onfocus=alert(2) name=removeChild>123</form>",
+  "result": "<form><input name="removeChild">123</form>",
+}
+`;
+
+exports[`dompurify compatibility > onsubmit, onfocus; DOM clobbering: setAttribute > onsubmit, onfocus; DOM clobbering: setAttribute 1`] = `
+{
+  "expected": "<form><input>123</form>",
+  "payload": "<form onsubmit=alert(1)><input onfocus=alert(2) name=setAttribute>123</form>",
+  "result": "<form><input name="setAttribute">123</form>",
+}
+`;
+
+exports[`dompurify compatibility > safe usage of URI-like attribute values (see #135) > safe usage of URI-like attribute values (see #135) 1`] = `
+{
+  "expected": "<b title="javascript:alert(2)"></b>",
+  "payload": "<b href="javascript:alert(1)" title="javascript:alert(2)"></b>",
+  "result": "<b></b>",
+}
+`;
+
+exports[`dompurify compatibility > src Attributes for IMG, AUDIO, VIDEO and SOURCE (see #131) > src Attributes for IMG, AUDIO, VIDEO and SOURCE (see #131) 1`] = `
+{
+  "expected": "<img src="data:,123"><audio src="data:,456"></audio><video src="data:,789"></video><source src="data:,012"><div></div>",
+  "payload": "<img src="data:,123"><audio src="data:,456"></audio><video src="data:,789"></video><source src="data:,012"><div src="data:,345">",
+  "result": "<img><audio></audio><video></video><source><div></div>",
+}
+`;
