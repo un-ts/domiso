@@ -11,17 +11,15 @@ jobs:
     env:
       CI_JOB_NUMBER: 1
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
-        with:
-          version: latest
 
-      - name: Setup Node.js 16
-        uses: actions/setup-node@v3
+      - name: Setup Node.js LTS
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: lts/*
           cache: pnpm
 
       - name: Install Dependencies

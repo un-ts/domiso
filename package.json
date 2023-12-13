@@ -7,7 +7,7 @@
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "funding": "https://opencollective.com/unts",
   "license": "MIT",
-  "packageManager": "pnpm@7.11.0",
+  "packageManager": "pnpm@8.11.0",
   "engines": {
     "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
@@ -55,18 +55,18 @@
   "devDependencies": {
     "@1stg/app-config": "^7.2.1",
     "@1stg/lib-config": "^10.2.1",
-    "@changesets/changelog-github": "^0.4.6",
+    "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.24.4",
     "@pkgr/webpack": "^3.4.0",
     "@pkgr/webpack-mdx": "^2.2.0",
     "@size-limit/preset-small-lib": "^8.1.0",
-    "@types/mdx": "^2.0.2",
+    "@types/mdx": "^2.0.3",
     "@types/node": "^18.7.18",
-    "@types/react": "^18.0.20",
-    "@types/react-dom": "^18.0.6",
-    "@types/web": "^0.0.72",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@types/web": "^0.0.93",
     "@vitest/coverage-istanbul": "^0.23.2",
-    "domiso": "link:.",
+    "domiso": "link:",
     "github-markdown-css": "^5.1.0",
     "jsdom": "^20.0.0",
     "react": "^18.2.0",
@@ -88,6 +88,12 @@
       "require": "./lib/index.cjs"
     },
     "types": "./lib/index.d.ts"
+  },
+  "pnpm": {
+    "overrides": {
+      "prettier": "^2.8.8",
+      "sh-syntax": "^0.4.1"
+    }
   },
   "size-limit": [
     {
