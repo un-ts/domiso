@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.0
+
+### Minor Changes
+
+- [#37](https://github.com/un-ts/domiso/pull/37) [`462eac0`](https://github.com/un-ts/domiso/commit/462eac0ed5bb53150ca14cec6e70b8307e6968ad) Thanks [@JounQin](https://github.com/JounQin)! - feat: better compatibility with `dompurify`, prevent many more XSS cases
+
 ## 0.0.3
 
 ### Patch Changes
