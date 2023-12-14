@@ -13,7 +13,20 @@ describe('fixtures', () => {
     for (const file of files) {
       expect(
         sanitize(await fs.readFile(path.resolve(htmlFixtures, file), 'utf8')),
-      ).toMatchSnapshot()
+      ).toMatchSnapshot(file)
+    }
+  })
+
+  test('fragment', async () => {
+    const fragmentFixtures = path.resolve(fixtures, 'fragment')
+    const files = await fs.readdir(fragmentFixtures)
+    for (const file of files) {
+      expect(
+        sanitize(
+          await fs.readFile(path.resolve(fragmentFixtures, file), 'utf8'),
+          true,
+        ),
+      ).toMatchSnapshot(file)
     }
   })
 
@@ -23,7 +36,7 @@ describe('fixtures', () => {
     for (const file of files) {
       expect(
         sanitizeSvg(await fs.readFile(path.resolve(svgFixtures, file), 'utf8')),
-      ).toMatchSnapshot()
+      ).toMatchSnapshot(file)
     }
   })
 })

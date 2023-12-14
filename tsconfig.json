@@ -2,7 +2,8 @@
   "extends": "@1stg/tsconfig/node16",
   "compilerOptions": {
     "paths": {
-      "domiso": ["./src/index.ts"]
+      "domiso": ["./src/index.ts"],
+      "DOMPurify/*": ["./DOMPurify/*"]
     }
   }
 }

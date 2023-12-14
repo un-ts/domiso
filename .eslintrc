@@ -2,6 +2,7 @@
   "root": true,
   "extends": "@1stg",
   "rules": {
+    "unicorn/prefer-set-has": "off",
     "unicorn/template-indent": "off"
   },
   "overrides": [

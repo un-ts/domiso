@@ -2,8 +2,11 @@ coverage
 dist
 lib
 LICENSE
+fixtures
+/DOMPurify
 *.json
 *.log
+*.mts
 *.patch
 *.snap
 *.svg
