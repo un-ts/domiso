@@ -96,7 +96,7 @@
   "size-limit": [
     {
       "path": "lib/index.js",
-      "limit": "750B"
+      "limit": "1KB"
     }
   ],
   "typeCoverage": {

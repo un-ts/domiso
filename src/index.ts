@@ -3,23 +3,33 @@ let domParser: DOMParser | undefined
 export type DocumentOrFragment = Document | DocumentFragment
 
 const isDocumentOrFragment = (
-  el: DocumentOrFragment | Element,
+  el: ChildNode | DocumentOrFragment,
 ): el is DocumentOrFragment =>
   el.nodeType === Node.DOCUMENT_NODE ||
   el.nodeType === Node.DOCUMENT_FRAGMENT_NODE
 
-export function getTagName(el: DocumentOrFragment): undefined
-export function getTagName(el: Element): string
-export function getTagName(el: DocumentOrFragment | Element): string | undefined
-export function getTagName(el: DocumentOrFragment | Element) {
-  return 'tagName' in el ? el.tagName.toLowerCase() : undefined
+const isElement = (el: ChildNode | DocumentOrFragment): el is Element =>
+  el.nodeType === Node.ELEMENT_NODE
+
+const isComment = (el: ChildNode): el is Comment =>
+  el.nodeType === Node.COMMENT_NODE
+
+function getTagName(el: Element): string
+function getTagName(el: ChildNode | DocumentOrFragment): string | undefined
+function getTagName(el: ChildNode | DocumentOrFragment) {
+  return isElement(el) ? el.tagName.toLowerCase() : undefined
 }
 
 /**
  * @see https://www.w3schools.com/tags/att_form.asp
  */
-export const DISALLOWED_FORM_ATTR_TAG_NAMES =
+const DISALLOWED_FORM_ATTR_TAG_NAMES =
   'button,fieldset,input,label,meter,object,output,select,textarea'.split(',')
+
+const DISALLOWED_ATTR_NAMES = [
+  'autofocus',
+  ...'fld,formatas,src'.split(',').map(it => `data${it}`),
+]
 
 const sanitizeAttributes = (el: Element) => {
   const tagName = getTagName(el)
@@ -30,9 +40,10 @@ const sanitizeAttributes = (el: Element) => {
     if (name === 'is') {
       attr.value = ''
     } else if (
-      name === 'autofocus' ||
+      DISALLOWED_ATTR_NAMES.includes(name) ||
       (name === 'form' && DISALLOWED_FORM_ATTR_TAG_NAMES.includes(tagName)) ||
-      /^on/i.test(name) ||
+      /^(?:["'<=>`]|on)/i.test(name) ||
+      /\s/.test(name) ||
       /^(?:\w+script|data):/i.test(value.replaceAll(/\r?\n/g, ''))
     ) {
       el.removeAttributeNode(attr)
@@ -44,9 +55,9 @@ const sanitizeAttributes = (el: Element) => {
   return el
 }
 
-const sanitizeChildren = <T extends DocumentOrFragment | Element>(el: T) => {
-  for (let i = 0, len = el.children.length; i < len; i++) {
-    const item = el.children[i]
+const sanitizeChildren = <T extends ChildNode | DocumentOrFragment>(el: T) => {
+  for (let i = 0, len = el.childNodes.length; i < len; i++) {
+    const item = el.childNodes[i]
     const sanitized = sanitizeNode(item, getTagName(el))
     if (sanitized === item) {
       continue
@@ -64,49 +75,68 @@ const sanitizeChildren = <T extends DocumentOrFragment | Element>(el: T) => {
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#using_mathml
  */
-export const MathML_TAG_NAMES = new Set(
+const MathML_TAG_NAMES =
   'error,frac,i,multiscripts,n,o,over,padded,phantom,root,row,s,space,sqrt,style,sub,subsup,sup,table,td,text,tr,under,underover'
     .split(',')
-    .map(it => `m${it}`),
-)
+    .map(it => `m${it}`)
+
+const DANGEROUS_OR_OBSOLETE_TAG_NAMES = 'event-source,listing'
 
 function sanitizeNode(el: Document): Document
 function sanitizeNode(el: DocumentFragment): DocumentFragment
 function sanitizeNode(
-  el: Element,
+  el: ChildNode,
   parentTagName?: string,
-): Element | string | null
+): ChildNode | string | null | undefined
 function sanitizeNode(
-  el: DocumentOrFragment | Element,
+  el: ChildNode | DocumentOrFragment,
   parentTagName?: string,
 ) {
   if (isDocumentOrFragment(el)) {
     return sanitizeChildren(el)
   }
 
+  if (isComment(el)) {
+    return
+  }
+
+  if (!isElement(el)) {
+    return el
+  }
+
   const tagName = getTagName(el)
 
   if (
-    (parentTagName === 'math' && !MathML_TAG_NAMES.has(tagName)) ||
+    (parentTagName === 'math' && !MathML_TAG_NAMES.includes(tagName)) ||
+    DANGEROUS_OR_OBSOLETE_TAG_NAMES.includes(tagName) ||
     // unknown HTML element
     el instanceof HTMLUnknownElement ||
     // unknown SVG element
-    Object.getPrototypeOf(el) === SVGElement.prototype
+    (Object.getPrototypeOf(el) === SVGElement.prototype &&
+      // https://github.com/jsdom/jsdom/issues/2734
+      !['defs', 'filter', 'g', 'script'].includes(tagName))
   ) {
     return el.textContent
   }
 
   switch (tagName) {
+    case 'style': {
+      if ((el as HTMLStyleElement).sheet?.cssRules.length) {
+        break
+      }
+    }
+    // eslint-disable-next-line no-fallthrough -- intended to remove empty style element
+    case 'embed':
     case 'iframe':
     case 'link':
     case 'meta':
+    case 'object':
     case 'parsererror':
     case 'script':
     // eslint-disable-next-line no-fallthrough -- deprecated tags
     case 'noembed':
     case 'xmp': {
-      el.remove()
-      return
+      return el.remove()
     }
     case 'template': {
       sanitizeChildren((el as HTMLTemplateElement).content)

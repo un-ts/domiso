@@ -8,7 +8,10 @@ const incorrectOverrides: Partial<Record<string, string>> = {
     'a<svg></svg>',
   'Test against fake-element-based namepsace-confusion abusing mXSS attacks 2/2':
     '<math><mtext><option></option></mtext></math>',
+  'mXSS Variation II': '<img src="x" id="">',
   68: `<div id="14"><input pattern="^((a+.)a)+$" value="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!">//["'\`--&gt;]]&gt;]</div>`,
+  91: `<div id="38">//["'\`--&gt;]]&gt;]</div><div id="39"></div>`,
+  97: `<div id="42"><base><a href="/. /,alert(42)//#">XXX</a>//["'\`--&gt;]]&gt;]</div>`,
 }
 
 describe('dompurify compatibility', () => {
@@ -36,6 +39,6 @@ describe('dompurify compatibility', () => {
   }
 
   test('mismatches', () => {
-    expect(mismatches).toMatchInlineSnapshot(`103`)
+    expect(mismatches).toMatchInlineSnapshot(`73`)
   })
 })
