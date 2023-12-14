@@ -19,7 +19,7 @@ exports[`fixtures > fragment > style.html 1`] = `
 exports[`fixtures > fragment > svg-g.html 1`] = `
 "<div id="11">
   <svg xmlns="http://www.w3.org/2000/svg">
-    </svg>//["'\\\`--&gt;]]&gt;]
+    <g></g></svg>//["'\\\`--&gt;]]&gt;]
 </div>
 "
 `;
@@ -57,14 +57,14 @@ exports[`fixtures > svg > basic.svg 1`] = `
 
 exports[`fixtures > svg > image-href.svg 1`] = `
 "<svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
-  
+  <g fill="none" fill-rule="evenodd">
     
-    
+    <g transform="translate(3 4)" fill-rule="nonzero">
       11111
       
       
-    
-  
+    </g>
+  </g>
 </svg>"
 `;
 

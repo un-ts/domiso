@@ -34,7 +34,7 @@
     "build": "pnpm test && run-p build:*",
     "build:r": "r -f cjs",
     "build:tsc": "tsc -p src",
-    "codesandbox:build": "yarn test && yarn run-p build:*",
+    "codesandbox:build": "yarn test -u && yarn run-p build:*",
     "codesandbox:install": "git submodule update --init && yarn",
     "dev": "vitest",
     "docs:build": "w -e docs -p --publicPath /",

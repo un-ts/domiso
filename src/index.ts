@@ -79,7 +79,7 @@ const MathML_TAG_NAMES =
     .split(',')
     .map(it => `m${it}`)
 
-const DANGEROUS_OR_OBSOLETE_TAG_NAMES = 'event-source,listing'
+const DANGEROUS_OR_OBSOLETE_TAG_NAMES = 'event-source,listing'.split(',')
 
 function sanitizeNode(el: Document): Document
 function sanitizeNode(el: DocumentFragment): DocumentFragment

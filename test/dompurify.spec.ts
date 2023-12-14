@@ -43,6 +43,6 @@ describe('dompurify compatibility', () => {
   }
 
   test('mismatches', () => {
-    expect(mismatches).toMatchInlineSnapshot(`72`)
+    expect(mismatches).toMatchInlineSnapshot(`67`)
   })
 })

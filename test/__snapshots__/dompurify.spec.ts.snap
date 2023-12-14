@@ -8,27 +8,11 @@ exports[`dompurify compatibility > &gt;style&lt; > &gt;style&lt; 1`] = `
 }
 `;
 
-exports[`dompurify compatibility > 65 > 65 1`] = `
-{
-  "expected": "<div id="11"><svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>//["'\`--&gt;]]&gt;]</div>",
-  "payload": "<div id="11"><svg xmlns="http://www.w3.org/2000/svg"><g onload="javascript:alert(11)"></g></svg>//["'\`-->]]>]</div>",
-  "result": "<div id="11"><svg xmlns="http://www.w3.org/2000/svg"></svg>//["'\`--&gt;]]&gt;]</div>",
-}
-`;
-
 exports[`dompurify compatibility > 81 > 81 1`] = `
 {
   "expected": "<div id="27"><style>p[foo=bar{}*{-o-link:'javascript:alert(27)'}{}*{-o-link-source:current}*{background:red}]{background:green};</style>//["'\`--&gt;]]&gt;]</div><div id="28">1&gt;//["'\`--&gt;]]&gt;]</div>",
   "payload": "<div id="27"><style>p[foo=bar{}*{-o-link:'javascript:alert(27)'}{}*{-o-link-source:current}*{background:red}]{background:green};</style>//["'\`-->]]>]</div><div id="28">1<animate/xmlns=urn:schemas-microsoft-com:time style=behavior:url(#default#time2)  attributename=innerhtml values=<img/src="."onerror=alert(28)>>//["'\`-->]]>]</div>",
   "result": "<div id="27">//["'\`--&gt;]]&gt;]</div><div id="28">1&gt;//["'\`--&gt;]]&gt;]</div>",
-}
-`;
-
-exports[`dompurify compatibility > 95 > 95 1`] = `
-{
-  "expected": "<div id="41"><li style="list-style:url()"></li></div>",
-  "payload": "<div id="41"><li style=list-style:url() onerror=alert(41)></li>",
-  "result": "<div id="41"></div>",
 }
 `;
 
@@ -58,22 +42,6 @@ exports[`dompurify compatibility > 100 > 100 1`] = `
   "expected": "<div id="44"><style>*[{}@import'test.css?]{color: green;}</style>X//["'\`--&gt;]]&gt;]</div>",
   "payload": "<div id="44"><style>*[{}@import'test.css?]{color: green;}</style>X//["'\`-->]]>]</div>",
   "result": "<div id="44">X//["'\`--&gt;]]&gt;]</div>",
-}
-`;
-
-exports[`dompurify compatibility > 111 > 111 1`] = `
-{
-  "expected": "<div id="55"><video><source>//["'\`--&gt;]]&gt;]</video></div>",
-  "payload": "<div id="55"><video><source onerror="alert(55)">//["'\`-->]]>]</div>",
-  "result": "<div id="55"><video>//["'\`--&gt;]]&gt;]</video></div>",
-}
-`;
-
-exports[`dompurify compatibility > 112 > 112 1`] = `
-{
-  "expected": "<div id="56"><video><source></video>//["'\`--&gt;]]&gt;]</div>",
-  "payload": "<div id="56"><video onerror="alert(56)"><source></source></video>//["'\`-->]]>]</div>",
-  "result": "<div id="56"><video></video>//["'\`--&gt;]]&gt;]</div>",
 }
 `;
 
@@ -490,7 +458,7 @@ exports[`dompurify compatibility > Don't remove ARIA attributes if not prohibite
 {
   "expected": "<div class="msg" role="dialog" aria-labelledby="msg--title"><button type="button" aria-label="close" class="modal-close"><i class="icon-close"></i>some button</button></div>",
   "payload": "<div aria-labelledby="msg--title" role="dialog" class="msg"><button class="modal-close" aria-label="close" type="button"><i class="icon-close"></i>some button</button></div>",
-  "result": "<div aria-labelledby="msg--title" role="dialog" class="msg"><button class="modal-close" aria-label="close" type="button">some button</button></div>",
+  "result": "<div aria-labelledby="msg--title" role="dialog" class="msg"><button class="modal-close" aria-label="close" type="button"><i class="icon-close"></i>some button</button></div>",
 }
 `;
 
@@ -564,14 +532,6 @@ exports[`dompurify compatibility > Img element inside noscript terminated inside
   "expected": "<b></b>",
   "payload": "<b><noscript><!-- </noscript><img src=x onerror=alert(1) --></noscript>",
   "result": "<b><noscript></noscript></b>",
-}
-`;
-
-exports[`dompurify compatibility > Img element inside shadow DOM template > Img element inside shadow DOM template 1`] = `
-{
-  "expected": "<template><s><template><s><img src="x">@shafigullin</s></template></s></template>",
-  "payload": "<body><template><s><template><s><img src=x onerror=alert(1)>@shafigullin</s></template></s></template>",
-  "result": "<template></template>",
 }
 `;
 
@@ -889,6 +849,6 @@ exports[`dompurify compatibility > src Attributes for IMG, AUDIO, VIDEO and SOUR
 {
   "expected": "<img src="data:,123"><audio src="data:,456"></audio><video src="data:,789"></video><source src="data:,012"><div></div>",
   "payload": "<img src="data:,123"><audio src="data:,456"></audio><video src="data:,789"></video><source src="data:,012"><div src="data:,345">",
-  "result": "<img><audio></audio><video></video><div src="data:,345"></div>",
+  "result": "<img><audio></audio><video></video><source><div></div>",
 }
 `;
