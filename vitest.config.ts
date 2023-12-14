@@ -3,10 +3,7 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [
-    // TODO: report the TypeScript issue
-    (
-      autoImport as unknown as typeof import('unplugin-auto-import/vite')['default']
-    )({
+    autoImport({
       imports: 'vitest',
     }),
   ],
@@ -17,5 +14,6 @@ export default defineConfig({
       reporter: ['lcov', 'json', 'text'],
     },
     environment: 'jsdom',
+    include: ['test/*.{test,spec}.?(c|m)[jt]s?(x)'],
   },
 })
