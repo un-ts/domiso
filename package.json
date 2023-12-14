@@ -39,6 +39,7 @@
     "dev": "vitest",
     "docs:build": "w -e docs -p --publicPath /",
     "docs:dev": "w -e docs",
+    "limit": "pnpm build && size-limit",
     "lint": "run-p lint:*",
     "lint:es": "eslint . --cache -f friendly --max-warnings 10",
     "lint:style": "stylelint . --cache",
