@@ -1,5 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`dompurify compatibility > &gt;style&lt; > &gt;style&lt; 1`] = `
+{
+  "expected": "",
+  "payload": "<style>*{color: red}</style>",
+  "result": "<style>*{color: red}</style>",
+}
+`;
+
 exports[`dompurify compatibility > 65 > 65 1`] = `
 {
   "expected": "<div id="11"><svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>//["'\`--&gt;]]&gt;]</div>",
@@ -16,19 +24,32 @@ exports[`dompurify compatibility > 81 > 81 1`] = `
 }
 `;
 
-exports[`dompurify compatibility > 83 > 83 1`] = `
-{
-  "expected": "<div id="30"><style>@import "data:,*%7bx:expression(alert(30))%7D";</style>//["'\`--&gt;]]&gt;]</div>",
-  "payload": "<div id="30"><style>@import "data:,*%7bx:expression(alert(30))%7D";</style>//["'\`-->]]>]</div>",
-  "result": "<div id="30">//["'\`--&gt;]]&gt;]</div>",
-}
-`;
-
 exports[`dompurify compatibility > 95 > 95 1`] = `
 {
   "expected": "<div id="41"><li style="list-style:url()"></li></div>",
   "payload": "<div id="41"><li style=list-style:url() onerror=alert(41)></li>",
   "result": "<div id="41"></div>",
+}
+`;
+
+exports[`dompurify compatibility > 99 > 99 1`] = `
+{
+  "expected": "Hello
+//["'\`--&gt;]]&gt;]",
+  "payload": "<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">
+@font-face {font-family: y; src: url("font.svg#x") format("svg");} body {font: 100px "y";}
+</style>
+</head>
+<body>Hello</body>
+</html>//["'\`-->]]>]</div>",
+  "result": "<style type="text/css">
+@font-face {font-family: y; src: url("font.svg#x") format("svg");} body {font: 100px "y";}
+</style>
+
+Hello
+//["'\`--&gt;]]&gt;]",
 }
 `;
 
@@ -71,14 +92,6 @@ exports[`dompurify compatibility > 121 > 121 1`] = `
   "result": "//["'\`--&gt;]]&gt;]
 
 ]&gt;//["'\`--&gt;]]&gt;]",
-}
-`;
-
-exports[`dompurify compatibility > 134 > 134 1`] = `
-{
-  "expected": "<div id="80"><style>*{x:ｅｘｐｒｅｓｓｉｏｎ(alert(80))}</style>//["'\`--&gt;]]&gt;]</div>",
-  "payload": "<div id="80"><style>*{x:ｅｘｐｒｅｓｓｉｏｎ(alert(80))}</style>//["'\`-->]]>]</div>",
-  "result": "<div id="80">//["'\`--&gt;]]&gt;]</div>",
 }
 `;
 
@@ -188,47 +201,6 @@ exports[`dompurify compatibility > 158 > 158 1`] = `
   "result": "<div id="110"><svg xmlns="http://www.w3.org/2000/svg">
 
 </svg>//["'\`--&gt;]]&gt;]</div>",
-}
-`;
-
-exports[`dompurify compatibility > 160 > 160 1`] = `
-{
-  "expected": [
-    "<div id="112"><div style="font-family:foo{bar;background:url(http://foo.f/oo};color:red/*/foo.jpg);">X</div>//["'\`--&gt;]]&gt;]</div><div id="113"><div id="x">XXX</div>
-<style>
-
-#x{font-family:foo[bar;color:green;}
-
-#y];color:red;{}
-
-</style>//["'\`--&gt;]]&gt;]</div>",
-    "<div id="112"><div>X</div>//["'\`--&gt;]]&gt;]</div><div id="113"><div id="x">XXX</div>
-<style>
-
-#x{font-family:foo[bar;color:green;}
-
-#y];color:red;{}
-
-</style>//["'\`--&gt;]]&gt;]</div>",
-  ],
-  "payload": "<div id="112"><div style="font-family:foo{bar;background:url(http://foo.f/oo};color:red/*/foo.jpg);">X</div>//["'\`-->]]>]</div><div id="113"><div id="x">XXX</div>
-<style>
-
-#x{font-family:foo[bar;color:green;}
-
-#y];color:red;{}
-
-</style>//["'\`-->]]>]</div>",
-  "result": "<div id="112"><div style="font-family:foo{bar;background:url(http://foo.f/oo};color:red/*/foo.jpg);">X</div>//["'\`--&gt;]]&gt;]</div><div id="113"><div id="x">XXX</div>
-//["'\`--&gt;]]&gt;]</div>",
-}
-`;
-
-exports[`dompurify compatibility > 166 > 166 1`] = `
-{
-  "expected": "<textarea rows="10" cols="50" type="text"></textarea>//["'\`--&gt;]]&gt;]",
-  "payload": "<textarea type="text" cols="50" rows="10"></textarea>//["'\`-->]]>]</div>",
-  "result": "<textarea type="text" cols="50" rows="10"></textarea>//["'\`--&gt;]]&gt;]",
 }
 `;
 
@@ -830,6 +802,14 @@ exports[`dompurify compatibility > Tests against nesting-based mXSS behavior 3/5
   "expected": "<math><mtext><table></table></mtext></math>",
   "payload": "<math><mtext><table><mglyph><style><!--</style><img title="--&gt;&lt;img src=1 onerror=alert(1)&gt;">",
   "result": "<math><mtext>&lt;!--<table></table></mtext></math>",
+}
+`;
+
+exports[`dompurify compatibility > Tests against proper handling of leading whitespaces > Tests against proper handling of leading whitespaces 1`] = `
+{
+  "expected": " ",
+  "payload": " ",
+  "result": "",
 }
 `;
 

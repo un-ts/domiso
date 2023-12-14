@@ -1,11 +1,22 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`fixtures > fragment 1`] = `
+exports[`fixtures > fragment > is.html 1`] = `
 "<b is="">bar</b>
 "
 `;
 
-exports[`fixtures > fragment 2`] = `
+exports[`fixtures > fragment > style.html 1`] = `
+"
+<style>
+  .x {
+    border: 1px solid #000;
+  }
+</style>
+
+"
+`;
+
+exports[`fixtures > fragment > svg-g.html 1`] = `
 "<div id="11">
   <svg xmlns="http://www.w3.org/2000/svg">
     </svg>//["'\\\`--&gt;]]&gt;]
@@ -13,7 +24,7 @@ exports[`fixtures > fragment 2`] = `
 "
 `;
 
-exports[`fixtures > fragment 3`] = `
+exports[`fixtures > fragment > template.html 1`] = `
 "<select>
   <template>
     <img src="x">
@@ -22,7 +33,7 @@ exports[`fixtures > fragment 3`] = `
 "
 `;
 
-exports[`fixtures > html 1`] = `
+exports[`fixtures > html > basic.html 1`] = `
 "<html lang="en"><head>
     
     
@@ -37,14 +48,14 @@ exports[`fixtures > html 1`] = `
 </body></html>"
 `;
 
-exports[`fixtures > svg 1`] = `
+exports[`fixtures > svg > basic.svg 1`] = `
 "<svg>
   <text>Hello World!</text>
   
 </svg>"
 `;
 
-exports[`fixtures > svg 2`] = `
+exports[`fixtures > svg > image-href.svg 1`] = `
 "<svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
   
     
@@ -57,7 +68,7 @@ exports[`fixtures > svg 2`] = `
 </svg>"
 `;
 
-exports[`fixtures > svg 3`] = `
+exports[`fixtures > svg > xml.svg 1`] = `
 "<svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
   
   

@@ -13,7 +13,7 @@ describe('fixtures', () => {
     for (const file of files) {
       expect(
         sanitize(await fs.readFile(path.resolve(htmlFixtures, file), 'utf8')),
-      ).toMatchSnapshot()
+      ).toMatchSnapshot(file)
     }
   })
 
@@ -26,7 +26,7 @@ describe('fixtures', () => {
           await fs.readFile(path.resolve(fragmentFixtures, file), 'utf8'),
           true,
         ),
-      ).toMatchSnapshot()
+      ).toMatchSnapshot(file)
     }
   })
 
@@ -36,7 +36,7 @@ describe('fixtures', () => {
     for (const file of files) {
       expect(
         sanitizeSvg(await fs.readFile(path.resolve(svgFixtures, file), 'utf8')),
-      ).toMatchSnapshot()
+      ).toMatchSnapshot(file)
     }
   })
 })

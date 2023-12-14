@@ -91,6 +91,9 @@
   "pnpm": {
     "overrides": {
       "sh-syntax": "^0.4.1"
+    },
+    "patchedDependencies": {
+      "jsdom@23.0.1": "patches/jsdom@23.0.1.patch"
     }
   },
   "size-limit": [

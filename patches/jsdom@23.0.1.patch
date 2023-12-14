@@ -1,0 +1,29 @@
+diff --git a/lib/jsdom/living/helpers/stylesheets.js b/lib/jsdom/living/helpers/stylesheets.js
+index 9b44b6dba9a74495f880e6a6fe53ffbc9bf8a5d6..cb536fc5b11ca1eb0c5f98e9292ce46f63c03290 100644
+--- a/lib/jsdom/living/helpers/stylesheets.js
++++ b/lib/jsdom/living/helpers/stylesheets.js
+@@ -43,6 +43,11 @@ exports.createStylesheet = (sheetText, elementImpl, baseURL) => {
+     return;
+   }
+ 
++  if (!elementImpl._ownerDocument._defaultView) {
++    elementImpl.sheet = sheet;
++    return;
++  }
++
+   scanForImportRules(elementImpl, sheet.cssRules, baseURL);
+ 
+   addStylesheet(sheet, elementImpl);
+diff --git a/lib/jsdom/living/nodes/HTMLStyleElement-impl.js b/lib/jsdom/living/nodes/HTMLStyleElement-impl.js
+index 7dcc6fbd453ec5edda80f07c0e79a2fe6e6c9906..2116266218ca6420457518595cdd4f3f73eea966 100644
+--- a/lib/jsdom/living/nodes/HTMLStyleElement-impl.js
++++ b/lib/jsdom/living/nodes/HTMLStyleElement-impl.js
+@@ -52,7 +52,7 @@ class HTMLStyleElementImpl extends HTMLElementImpl {
+     }
+ 
+     // Browsing-context connected, per https://github.com/whatwg/html/issues/4547
+-    if (!this.isConnected || !this._ownerDocument._defaultView) {
++    if (!this.isConnected) {
+       return;
+     }
+ 

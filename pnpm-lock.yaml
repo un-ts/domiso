@@ -7,6 +7,11 @@ settings:
 overrides:
   sh-syntax: ^0.4.1
 
+patchedDependencies:
+  jsdom@23.0.1:
+    hash: c4vz5hwxbqpkrhc7f5hqkxfedi
+    path: patches/jsdom@23.0.1.patch
+
 devDependencies:
   '@1stg/app-config':
     specifier: ^9.0.1
@@ -55,7 +60,7 @@ devDependencies:
     version: 5.5.0
   jsdom:
     specifier: ^23.0.1
-    version: 23.0.1
+    version: 23.0.1(patch_hash=c4vz5hwxbqpkrhc7f5hqkxfedi)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -4865,14 +4870,6 @@ packages:
     resolution: {integrity: sha512-4J1l5d79hoIvsrKh5VUKVRA1aIdsOb10Hu5j3J2VfP/msDnfTdGPmNp2E1Wg+vs97Bktzo+MZePFFXSGoykYJw==}
     dev: true
 
-  /@types/jsdom@21.1.6:
-    resolution: {integrity: sha512-/7kkMsC+/kMs7gAYmmBR9P0vGTnOoLhQhyhQJSlXGI5bzTHp6xdo0TtKWQAsz6pmSAeVqKSbqeyP6hytqr9FDw==}
-    dependencies:
-      '@types/node': 20.10.4
-      '@types/tough-cookie': 4.0.5
-      parse5: 7.1.2
-    dev: true
-
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
@@ -5049,10 +5046,6 @@ packages:
 
   /@types/supports-color@8.1.3:
     resolution: {integrity: sha512-Hy6UMpxhE3j1tLpl27exp1XqHD7n8chAiNPzWfz16LPZoMMoSc4dzLl6w9qijkEb/r5O1ozdu1CWGA2L83ZeZg==}
-    dev: true
-
-  /@types/tough-cookie@4.0.5:
-    resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
     dev: true
 
   /@types/trusted-types@2.0.7:
@@ -11335,7 +11328,7 @@ packages:
     hasBin: true
     dev: true
 
-  /jsdom@23.0.1:
+  /jsdom@23.0.1(patch_hash=c4vz5hwxbqpkrhc7f5hqkxfedi):
     resolution: {integrity: sha512-2i27vgvlUsGEBO9+/kJQRbtqtm+191b5zAZrU/UezVmnC2dlDAFLgDYJvAEi94T4kjsRKkezEtLQTgsNEsW2lQ==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -11370,6 +11363,7 @@ packages:
       - supports-color
       - utf-8-validate
     dev: true
+    patched: true
 
   /jsesc@0.5.0:
     resolution: {integrity: sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA==}
@@ -19526,7 +19520,7 @@ packages:
       chai: 4.3.10
       debug: 4.3.4
       execa: 8.0.1
-      jsdom: 23.0.1
+      jsdom: 23.0.1(patch_hash=c4vz5hwxbqpkrhc7f5hqkxfedi)
       local-pkg: 0.5.0
       magic-string: 0.30.5
       pathe: 1.1.1

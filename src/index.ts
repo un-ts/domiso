@@ -5,14 +5,13 @@ export type DocumentOrFragment = Document | DocumentFragment
 const isDocumentOrFragment = (
   el: ChildNode | DocumentOrFragment,
 ): el is DocumentOrFragment =>
-  el.nodeType === Node.DOCUMENT_NODE ||
-  el.nodeType === Node.DOCUMENT_FRAGMENT_NODE
+  el.nodeType === el.DOCUMENT_NODE || el.nodeType === el.DOCUMENT_FRAGMENT_NODE
 
 const isElement = (el: ChildNode | DocumentOrFragment): el is Element =>
-  el.nodeType === Node.ELEMENT_NODE
+  el.nodeType === el.ELEMENT_NODE
 
 const isComment = (el: ChildNode): el is Comment =>
-  el.nodeType === Node.COMMENT_NODE
+  el.nodeType === el.COMMENT_NODE
 
 function getTagName(el: Element): string
 function getTagName(el: ChildNode | DocumentOrFragment): string | undefined
@@ -121,7 +120,8 @@ function sanitizeNode(
 
   switch (tagName) {
     case 'style': {
-      if ((el as HTMLStyleElement).sheet?.cssRules.length) {
+      const { sheet } = el as HTMLStyleElement
+      if (sheet?.ownerRule || sheet?.cssRules.length) {
         break
       }
     }
@@ -173,7 +173,13 @@ export const sanitize = (
       ? { type: typeOrFragment }
       : { fragment: typeOrFragment }
 
-  const doc = sanitizeNode(domParser.parseFromString(domString, type))
+  const doc = sanitizeNode(
+    domParser.parseFromString(
+      // make sure the string is wrapped in a body tag
+      fragment ? `<body>${domString}` : domString,
+      type,
+    ),
+  )
 
   return (
     (fragment && type === TEXT_HTML
