@@ -25,10 +25,9 @@ function getTagName(el: ChildNode | DocumentOrFragment) {
 const DISALLOWED_FORM_ATTR_TAG_NAMES =
   'button,fieldset,input,label,meter,object,output,select,textarea'.split(',')
 
-const DISALLOWED_ATTR_NAMES = [
-  'autofocus',
-  ...'fld,formatas,src'.split(',').map(it => `data${it}`),
-]
+const DISALLOWED_ATTR_NAMES = 'autofocus,datafld,dataformatas,datasrc'.split(
+  ',',
+)
 
 const sanitizeAttributes = (el: Element) => {
   const tagName = getTagName(el)
@@ -181,12 +180,10 @@ export const sanitize = (
     ),
   )
 
-  return (
-    (fragment && type === TEXT_HTML
-      ? doc.body.innerHTML
-      : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- https://github.com/microsoft/TypeScript/issues/50078
-        doc.documentElement?.outerHTML) || ''
-  )
+  return fragment && type === TEXT_HTML
+    ? doc.body.innerHTML
+    : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- https://github.com/microsoft/TypeScript/issues/50078
+      doc.documentElement?.outerHTML || ''
 }
 
 export const sanitizeSvg = (svg: string) => sanitize(svg, IMAGE_SVG_XML)
