@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.1
+
+### Patch Changes
+
+- [#39](https://github.com/un-ts/domiso/pull/39) [`eae31ea`](https://github.com/un-ts/domiso/commit/eae31eafc03f32d67169ebd7512abff783e3c004) Thanks [@JounQin](https://github.com/JounQin)! - refactor: tiny improvements
+
 ## 0.1.0
 
 ### Minor Changes
