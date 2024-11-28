@@ -56,8 +56,8 @@ devDependencies:
     specifier: link:.
     version: 'link:'
   github-markdown-css:
-    specifier: ^5.5.0
-    version: 5.5.0
+    specifier: ^5.8.1
+    version: 5.8.1
   jsdom:
     specifier: ^23.0.1
     version: 23.0.1(patch_hash=c4vz5hwxbqpkrhc7f5hqkxfedi)
@@ -9768,8 +9768,8 @@ packages:
       through2: 4.0.2
     dev: true
 
-  /github-markdown-css@5.5.0:
-    resolution: {integrity: sha512-Ncp4putm+cGteDhtNYKGdchM4uiIm5tmQcAQx/eEYhuM0sOdjZYNQOauQTaodjDQjfw7whU99MijwC1M0FUY4w==}
+  /github-markdown-css@5.8.1:
+    resolution: {integrity: sha512-8G+PFvqigBQSWLQjyzgpa2ThD9bo7+kDsriUIidGcRhXgmcaAWUIpCZf8DavJgc+xifjbCG+GvMyWr0XMXmc7g==}
     engines: {node: '>=10'}
     dev: true
 
