@@ -76,7 +76,7 @@
     "size-limit": "^11.0.1",
     "type-coverage": "^2.27.0",
     "typescript": "^5.3.3",
-    "unplugin-auto-import": "^0.17.2",
+    "unplugin-auto-import": "^0.19.0",
     "vitest": "^1.0.4"
   },
   "publishConfig": {
